@@ -39,7 +39,7 @@ function crm_header(string $title): void
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title><?= h($title) ?> · Leads CRM</title>
-<link rel="stylesheet" href="crm.css?v=4">
+<link rel="stylesheet" href="crm.css?v=5">
 </head>
 <body>
 <?php if (!empty($_SESSION['crm_user'])): ?>

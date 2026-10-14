@@ -111,3 +111,6 @@ td small { color: var(--muted); }
 .history li { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .card table { margin-bottom: 12px; }
 .card code { word-break: break-all; }
+.stats .stat-link { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; text-decoration: none; color: var(--ink); }
+.stats .stat-link:hover { border-color: var(--blue); }
+.stats .stat-link small { display: block; color: var(--muted); font-size: 12px; }

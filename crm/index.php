@@ -24,6 +24,11 @@ $stats = $q("SELECT
     SUM(platform = 'Google Ads') AS gads
     FROM leads $where", array_merge([date('Y-m-d 00:00:00')], $params))->fetch();
 
+// Call / WhatsApp button taps (details on clicks.php).
+$clk = $pdo->query("SELECT SUM(type = 'call') AS calls, SUM(type = 'whatsapp') AS wa,
+    SUM(type = 'call' AND created_at >= '" . date('Y-m-d') . "') AS calls_today,
+    SUM(type = 'whatsapp' AND created_at >= '" . date('Y-m-d') . "') AS wa_today FROM clicks")->fetch();
+
 $badIn = rtrim(str_repeat('?,', count(BAD_STATUSES)), ',');
 $campaigns = $q("SELECT platform, " . CAMPAIGN_SQL . " AS campaign, COUNT(*) AS leads,
     SUM(status = 'Won') AS won, SUM(status IN ($badIn)) AS bad, MAX(created_at) AS last_at
@@ -50,6 +55,8 @@ crm_header('Leads');
     <div><span>New / uncontacted</span><strong class="t-red"><?= (int)$stats['fresh'] ?></strong></div>
     <div><span>From Google Ads</span><strong><?= (int)$stats['gads'] ?></strong></div>
     <div><span>Won</span><strong class="t-green"><?= (int)$stats['won'] ?></strong></div>
+    <a class="stat-link" href="clicks.php"><span>📞 Call button clicks</span><strong><?= (int)$clk['calls'] ?></strong><small>Today <?= (int)$clk['calls_today'] ?> · details →</small></a>
+    <a class="stat-link" href="clicks.php"><span>💬 WhatsApp clicks</span><strong class="t-green"><?= (int)$clk['wa'] ?></strong><small>Today <?= (int)$clk['wa_today'] ?> · details →</small></a>
 </section>
 
 <h2 class="pipe-title">Lead status</h2>
