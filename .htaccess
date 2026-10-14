@@ -1,0 +1,7 @@
+Options -Indexes
+<FilesMatch "\.(sqlite|md|txt|yml)$">
+  Require all denied
+</FilesMatch>
+# Block git metadata, tests and example config when the repo is cloned straight into the web root.
+RedirectMatch 404 /(\.git|tests)(/|$)
+RedirectMatch 404 /config\.local\.example\.php$

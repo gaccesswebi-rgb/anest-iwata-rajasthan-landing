@@ -1,0 +1,5 @@
+# Pass the Basic-Auth header to PHP (needed on CGI/FastCGI hosts for oci.php).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>

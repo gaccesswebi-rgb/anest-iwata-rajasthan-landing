@@ -1,0 +1,9 @@
+# Secrets and data – never commit
+config.local.php
+data/*.sqlite
+data/*.sqlite-*
+TEMP-LOGIN.txt
+
+# Local tooling
+.claude/
+.DS_Store
