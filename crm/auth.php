@@ -39,13 +39,13 @@ function crm_header(string $title): void
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title><?= h($title) ?> · Leads CRM</title>
-<link rel="stylesheet" href="crm.css?v=5">
+<link rel="stylesheet" href="crm.css?v=6">
 </head>
 <body>
 <?php if (!empty($_SESSION['crm_user'])): ?>
 <header class="bar">
     <a class="logo" href="./">Leads CRM <small>Anest Iwata · Rajasthan</small></a>
-    <nav><a href="./">Leads</a><a href="./#campaigns">Campaigns</a><a href="clicks.php">Call &amp; WhatsApp Clicks</a><a href="google-ads.php">Google Ads Sync</a><a href="logout.php">Logout</a></nav>
+    <nav><a href="./">Leads</a><a href="./#campaigns">Campaigns</a><a href="clicks.php">Clicks &amp; Events</a><a href="google-ads.php">Google Ads Sync</a><a href="logout.php">Logout</a></nav>
 </header>
 <?php endif; ?>
 <main class="page">

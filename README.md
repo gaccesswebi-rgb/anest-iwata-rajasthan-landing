@@ -46,6 +46,26 @@ Auto-tagging ON rakhein (gclid ke liye).
 
 **Meta / other ads:** URL me `utm_source=facebook&utm_medium=paid_social&utm_campaign=...` lagayein. CRM me "Meta Ads" dikhega.
 
+## GTM dataLayer events (GTM-5CH9GZMQ)
+
+GTM snippet `<head>` me sabse upar aur `<body>` ke turant baad (noscript) laga hai – `inc/gtag.php`, `inc/gtm-body.php`.
+Har page load pe pehle `page_type` (`landing_page` / `thank_you`) aur `page_name` push hota hai.
+
+| Event | Kab | Parameters (Data Layer Variables) |
+|---|---|---|
+| `cta_click` | Call / WhatsApp button | `cta_type` (call/whatsapp), `cta_section`, `cta_product` |
+| `get_quote_click` | Header / Mobile bar / Industries "Get Quote" | `cta_section` |
+| `form_start` | Form ka pehla field touch | `form_id` (hero/footer), `form_section` |
+| `form_submit` | Form validation pass, submit hone se pehle | `form_id`, `form_section`, `form_product` |
+| `generate_lead` | Thank-you page (lead save ho chuki) | `lead_id` (Ads transaction ID), `form_id`, `form_section`, `lead_product`, `traffic_platform` |
+| `video_play` | YouTube video play | `video_id` |
+
+Google Ads conversion: `generate_lead` pe (Transaction ID = `{{lead_id}}`). Call/WhatsApp conversion triggers me
+`cta_section` ≠ `Thank-you Page` condition lagayein. Koi personal data (naam/phone/email) dataLayer me nahi jaata.
+Yahi events (`cta_click`, `get_quote_click`, `form_start`, `video_play`) CRM → **Clicks & Events** me bhi gine jaate hain.
+
+Page `noindex, nofollow` hai (meta tag + `X-Robots-Tag` header) – sirf ads traffic ke liye.
+
 ## CRM me kya milta hai
 
 - Har lead: naam, mobile (call/WhatsApp button), city, product, message
@@ -53,7 +73,7 @@ Auto-tagging ON rakhein (gclid ke liye).
 - Status dropdown (12): New, Contacted, Not Reachable, Following Up, Site Visit Scheduled, Quotation Sent, Negotiation, Won, Lost, Not Interested, Wrong Lead, Duplicate / Spam — plus "Lead status" section with count per status (click = filter), notes
 - Filter by status / platform / campaign / date, CSV export
 - "Leads by platform & campaign" report (leads, won, junk per campaign)
-- **Call & WhatsApp Clicks** page: har Call/WhatsApp button tap ki ginti — kaunse section (Hero, Product Range, FAQ, Footer, Mobile Sticky Bar...), kaunse product, kaunse platform/campaign/keyword se. Caller ka number nahi milta, sirf clicks.
+- **Clicks & Events** page (Call, WhatsApp, Get Quote, Form started, Video play + form funnel): har Call/WhatsApp button tap ki ginti — kaunse section (Hero, Product Range, FAQ, Footer, Mobile Sticky Bar...), kaunse product, kaunse platform/campaign/keyword se. Caller ka number nahi milta, sirf clicks.
 
 - **Google Ads Sync**: lead ka status "Quotation Sent" / "Won" hote hi uska GCLID Google Ads ko offline conversion ke roop me jaata hai (daily auto-fetch ya CSV download). Mapping: `config.php` → `OCI_STAGES`.
 

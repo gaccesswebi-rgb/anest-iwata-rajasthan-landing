@@ -1,5 +1,5 @@
 <?php
-// Receives navigator.sendBeacon() from Call / WhatsApp buttons and logs the click.
+// Receives navigator.sendBeacon() for visitor actions (CTA_TYPES: call, whatsapp, get_quote, form_start, video_play) and logs them.
 require __DIR__ . '/inc/app.php';
 
 http_response_code(204);
@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') exit;
 $val = fn(string $k, int $max) => mb_substr(trim((string)($_POST[$k] ?? '')), 0, $max);
 
 $type = $val('type', 20);
-if (!in_array($type, ['call', 'whatsapp'], true)) exit;
+if (!isset(CTA_TYPES[$type])) exit;
 
 $track = [];
 foreach (TRACK_FIELDS as $k) $track[$k] = $val($k, $k === 'landing_url' || $k === 'referrer' ? 1000 : 255);
@@ -16,10 +16,10 @@ foreach (TRACK_FIELDS as $k) $track[$k] = $val($k, $k === 'landing_url' || $k ==
 $ip = $_SERVER['REMOTE_ADDR'] ?? '';
 $pdo = db();
 
-// Ignore floods: max 30 clicks per IP per 10 minutes.
+// Ignore floods: max 60 events per IP per 10 minutes.
 $st = $pdo->prepare('SELECT COUNT(*) FROM clicks WHERE ip = ? AND created_at > ?');
 $st->execute([$ip, date('Y-m-d H:i:s', time() - 600)]);
-if ($st->fetchColumn() >= 30) exit;
+if ($st->fetchColumn() >= 60) exit;
 
 $row = [
     'created_at' => date('Y-m-d H:i:s'),

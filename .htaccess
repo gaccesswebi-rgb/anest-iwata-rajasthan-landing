@@ -19,3 +19,8 @@ RedirectMatch 404 /config\.local\.example\.php$
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript image/svg+xml
 </IfModule>
+
+# Landing page must not appear in Google search (ads traffic only).
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>

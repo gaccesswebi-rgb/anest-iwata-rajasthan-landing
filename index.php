@@ -134,6 +134,8 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php include __DIR__ . '/inc/gtag.php'; ?>
+<meta name="robots" content="noindex, nofollow">
 <title>Anest Iwata Air Compressor Dealer in Rajasthan | Ahuja Group, Jaipur</title>
 <meta name="description" content="Authorised Anest Iwata Motherson dealer in Rajasthan. Screw, oil-free & reciprocating air compressors and vacuum pumps. Ex-stock delivery, installation, AMC & spares. Call <?= SITE_PHONE ?>.">
 <meta name="theme-color" content="#0E1621">
@@ -146,12 +148,12 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
 <!-- fonts load without blocking first paint -->
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap"></noscript>
-<link rel="stylesheet" href="assets/css/style.css?v=10">
+<link rel="stylesheet" href="assets/css/style.css?v=11">
 <link rel="preload" as="image" href="assets/img/hero-bg.webp" fetchpriority="high">
 <link rel="preload" as="image" href="assets/img/hero-compressors.webp">
-<?php include __DIR__ . '/inc/gtag.php'; ?>
 </head>
 <body>
+<?php include __DIR__ . '/inc/gtm-body.php'; ?>
 
 <div class="utility">
     <div class="wrap utility-in">
@@ -173,7 +175,7 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
         </nav>
         <div class="topbar-cta">
             <a class="btn btn-wa btn-sm" href="<?= $waDefault ?>" target="_blank" rel="noopener" data-track="wa" data-section="Header" aria-label="WhatsApp"><?= icon('whatsapp') ?> <span class="hide-sm">WhatsApp</span></a>
-            <a class="btn btn-red btn-sm" href="#enquiry">Get Quote</a>
+            <a class="btn btn-red btn-sm" href="#enquiry" data-cta="get_quote" data-section="Header">Get Quote</a>
         </div>
     </div>
 </header>
@@ -274,7 +276,7 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
             <?php foreach ($industries as $i => $name): ?>
             <figure class="ind"><img src="assets/img/ind-<?= $i + 1 ?>.webp" alt="<?= h($name) ?>" loading="lazy" width="360" height="299"><figcaption><?= h($name) ?></figcaption></figure>
             <?php endforeach; ?>
-            <a class="ind ind-cta" href="#enquiry"><span>Your industry?</span><strong>Get the right compressor</strong><?= icon('arrow-right') ?></a>
+            <a class="ind ind-cta" href="#enquiry" data-cta="get_quote" data-section="Industries"><span>Your industry?</span><strong>Get the right compressor</strong><?= icon('arrow-right') ?></a>
         </div>
     </div>
 </section>
@@ -447,7 +449,7 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
 <nav class="mobile-bar" aria-label="Quick contact">
     <a href="<?= $tel ?>" data-track="call" data-section="Mobile Sticky Bar"><?= icon('phone') ?> Call</a>
     <a href="<?= $waDefault ?>" target="_blank" rel="noopener" data-track="wa" data-section="Mobile Sticky Bar" class="mb-wa"><?= icon('whatsapp') ?> WhatsApp</a>
-    <a href="#enquiry" class="mb-quote">Get Quote</a>
+    <a href="#enquiry" class="mb-quote" data-cta="get_quote" data-section="Mobile Sticky Bar">Get Quote</a>
 </nav>
 
 <dialog class="lightbox" id="lightbox" aria-label="Award image">
@@ -455,6 +457,6 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
     <img src="" alt="">
 </dialog>
 
-<script src="assets/js/main.js?v=6" defer></script>
+<script src="assets/js/main.js?v=7" defer></script>
 </body>
 </html>

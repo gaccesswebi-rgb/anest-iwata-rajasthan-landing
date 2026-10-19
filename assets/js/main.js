@@ -20,7 +20,30 @@
     try { localStorage.setItem(STORE, JSON.stringify({ t: Date.now(), d: attr })); } catch (e) {}
   }
 
+  // ---- Tracking: every visitor action goes to the GTM dataLayer AND to the CRM (cta.php) ----
+  function dl(obj) { window.dataLayer = window.dataLayer || []; window.dataLayer.push(obj); }
+  function toCrm(type, section, product) {
+    var fd = new FormData();
+    fd.append('type', type);
+    fd.append('section', section || '');
+    fd.append('product', product || '');
+    Object.keys(attr).forEach(function (k) { fd.append(k, attr[k] || ''); });
+    // sendBeacon survives the page switching to the dialer / WhatsApp.
+    if (!(navigator.sendBeacon && navigator.sendBeacon('cta.php', fd))) {
+      fetch('cta.php', { method: 'POST', body: fd, keepalive: true }).catch(function () {});
+    }
+  }
+  var FORM_SECTION = { hero: 'Quote Section', footer: 'Contact Section' };
+
   document.querySelectorAll('.lead-form').forEach(function (f) {
+    var section = FORM_SECTION[f.id] || f.id, started = false;
+    f.addEventListener('focusin', function () {
+      if (started) return;
+      started = true;
+      dl({ event: 'form_start', form_id: f.id, form_section: section });
+      toCrm('form_start', section);
+    });
+
     Object.keys(attr).forEach(function (k) { if (f.elements[k]) f.elements[k].value = attr[k] || ''; });
 
     f.addEventListener('submit', function (e) {
@@ -32,6 +55,7 @@
         if (!ok && !bad) bad = el;
       });
       if (bad) { e.preventDefault(); bad.focus(); bad.reportValidity(); return; }
+      dl({ event: 'form_submit', form_id: f.id, form_section: section, form_product: f.elements.product.value || '' });
       var btn = f.querySelector('button[type=submit]');
       btn.disabled = true; btn.textContent = 'Sending…';
     });
@@ -57,6 +81,8 @@
     f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
     f.allowFullscreen = true;
     vb.replaceWith(f);
+    dl({ event: 'video_play', video_id: vb.dataset.yt });
+    toCrm('video_play', 'Why Choose (Video)');
   });
 
   // ---- Award lightbox ----
@@ -73,23 +99,22 @@
     lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('lb-close')) lb.close(); });
   }
 
-  // ---- Call / WhatsApp clicks: log to CRM (section + product + ad source) and fire Google Ads conversion ----
+  // ---- Call / WhatsApp clicks: CRM + GTM ("cta_click") + optional direct Google Ads conversion ----
   document.querySelectorAll('[data-track]').forEach(function (a) {
     a.addEventListener('click', function () {
-      var fd = new FormData();
-      fd.append('type', a.dataset.track === 'wa' ? 'whatsapp' : 'call');
-      fd.append('section', a.dataset.section || '');
-      fd.append('product', a.dataset.product || '');
-      Object.keys(attr).forEach(function (k) { fd.append(k, attr[k] || ''); });
-      // sendBeacon survives the page switching to the dialer / WhatsApp.
-      if (!(navigator.sendBeacon && navigator.sendBeacon('cta.php', fd))) {
-        fetch('cta.php', { method: 'POST', body: fd, keepalive: true }).catch(function () {});
-      }
-      // For GTM: trigger on Custom Event "cta_click" (GA4 event + Google Ads conversion tags).
-      window.dataLayer = window.dataLayer || [];
-      dataLayer.push({ event: 'cta_click', cta_type: fd.get('type'), cta_section: a.dataset.section || '', cta_product: a.dataset.product || '' });
+      var type = a.dataset.track === 'wa' ? 'whatsapp' : 'call';
+      toCrm(type, a.dataset.section, a.dataset.product);
+      dl({ event: 'cta_click', cta_type: type, cta_section: a.dataset.section || '', cta_product: a.dataset.product || '' });
       var g = window.GADS, label = g && g[a.dataset.track];
       if (label && window.gtag) gtag('event', 'conversion', { send_to: g.id + '/' + label });
+    });
+  });
+
+  // ---- "Get Quote" buttons that jump to the form ----
+  document.querySelectorAll('[data-cta="get_quote"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      toCrm('get_quote', a.dataset.section);
+      dl({ event: 'get_quote_click', cta_section: a.dataset.section || '' });
     });
   });
 })();

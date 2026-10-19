@@ -4,8 +4,8 @@ const SITE_PHONE      = '+91 9001848552';
 const SITE_PHONE_RAW  = '919001848552';           // used for tel: and wa.me links
 const SITE_EMAIL      = 'projects1@ahujagroup.in';
 
-// Google Tag Manager container (your WordPress site uses GTM-TWP5TT94). Leave empty to disable.
-const GTM_ID            = '';
+// Google Tag Manager container for this landing page. Leave empty to disable.
+const GTM_ID            = 'GTM-5CH9GZMQ';
 
 // Google Ads conversion tracking WITHOUT GTM. Leave empty if you set up the Ads conversion tags inside GTM
 // (filling both GTM tags and these would count every conversion twice).

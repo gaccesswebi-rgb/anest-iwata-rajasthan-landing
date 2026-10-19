@@ -1,26 +1,37 @@
 <?php
 require __DIR__ . '/inc/app.php';
 $lead = (int)($_GET['lead'] ?? 0);
+
+// dataLayer for GTM: page context + generate_lead (no personal data – only id, form, product, ad platform).
+$pageType = 'thank_you';
+$dlEvents = [];
+if ($lead) {
+    $st = db()->prepare('SELECT form, product, platform FROM leads WHERE id = ?');
+    $st->execute([$lead]);
+    if ($row = $st->fetch()) {
+        $dlEvents[] = [
+            'event' => 'generate_lead',
+            'lead_id' => 'lead-' . $lead,           // use as Google Ads transaction ID (no double counting on refresh)
+            'form_id' => $row['form'],
+            'form_section' => $row['form'] === 'hero' ? 'Quote Section' : 'Contact Section',
+            'lead_product' => (string)$row['product'],
+            'traffic_platform' => (string)$row['platform'],
+        ];
+    }
+}
 ?>
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
+<?php include __DIR__ . '/inc/gtag.php'; ?>
+<meta name="robots" content="noindex, nofollow">
 <title>Thank You | Ahuja Group – Anest Iwata Rajasthan</title>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
 <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=9">
-<?php if ($lead): ?>
-<script>
-  // For GTM: trigger on Custom Event "generate_lead"; use lead_id as the Google Ads transaction ID (no double counting on refresh).
-  window.dataLayer = window.dataLayer || [];
-  dataLayer.push({event: 'generate_lead', lead_id: 'lead-<?= $lead ?>'});
-</script>
-<?php endif; ?>
-<?php include __DIR__ . '/inc/gtag.php'; ?>
+<link rel="stylesheet" href="assets/css/style.css?v=11">
 <?php if (GADS_ID && GADS_LEAD_LABEL && $lead): ?>
 <script>gtag('event', 'conversion', {send_to: '<?= h(GADS_ID . '/' . GADS_LEAD_LABEL) ?>', transaction_id: 'lead-<?= $lead ?>'});</script>
 <?php endif; ?>
@@ -34,6 +45,7 @@ $lead = (int)($_GET['lead'] ?? 0);
 </style>
 </head>
 <body>
+<?php include __DIR__ . '/inc/gtm-body.php'; ?>
 <main class="ty">
     <div class="ty-card">
         <div class="ty-tick" aria-hidden="true">✓</div>
@@ -46,6 +58,6 @@ $lead = (int)($_GET['lead'] ?? 0);
         <p style="margin-top:22px"><a href="./">← Back to products</a></p>
     </div>
 </main>
-<script src="assets/js/main.js?v=6" defer></script>
+<script src="assets/js/main.js?v=7" defer></script>
 </body>
 </html>

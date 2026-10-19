@@ -27,7 +27,8 @@ $stats = $q("SELECT
 // Call / WhatsApp button taps (details on clicks.php).
 $clk = $pdo->query("SELECT SUM(type = 'call') AS calls, SUM(type = 'whatsapp') AS wa,
     SUM(type = 'call' AND created_at >= '" . date('Y-m-d') . "') AS calls_today,
-    SUM(type = 'whatsapp' AND created_at >= '" . date('Y-m-d') . "') AS wa_today FROM clicks")->fetch();
+    SUM(type = 'whatsapp' AND created_at >= '" . date('Y-m-d') . "') AS wa_today,
+    SUM(type = 'form_start') AS forms, SUM(type = 'form_start' AND created_at >= '" . date('Y-m-d') . "') AS forms_today FROM clicks")->fetch();
 
 $badIn = rtrim(str_repeat('?,', count(BAD_STATUSES)), ',');
 $campaigns = $q("SELECT platform, " . CAMPAIGN_SQL . " AS campaign, COUNT(*) AS leads,
@@ -57,6 +58,7 @@ crm_header('Leads');
     <div><span>Won</span><strong class="t-green"><?= (int)$stats['won'] ?></strong></div>
     <a class="stat-link" href="clicks.php"><span>📞 Call button clicks</span><strong><?= (int)$clk['calls'] ?></strong><small>Today <?= (int)$clk['calls_today'] ?> · details →</small></a>
     <a class="stat-link" href="clicks.php"><span>💬 WhatsApp clicks</span><strong class="t-green"><?= (int)$clk['wa'] ?></strong><small>Today <?= (int)$clk['wa_today'] ?> · details →</small></a>
+    <a class="stat-link" href="clicks.php?type=form_start"><span>✍️ Forms started</span><strong><?= (int)$clk['forms'] ?></strong><small>Today <?= (int)$clk['forms_today'] ?> · details →</small></a>
 </section>
 
 <h2 class="pipe-title">Lead status</h2>

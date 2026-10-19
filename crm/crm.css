@@ -114,3 +114,11 @@ td small { color: var(--muted); }
 .stats .stat-link { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; text-decoration: none; color: var(--ink); }
 .stats .stat-link:hover { border-color: var(--blue); }
 .stats .stat-link small { display: block; color: var(--muted); font-size: 12px; }
+
+/* event badges on the Clicks & Events page */
+.badge.ev-call { background: #E0F2FE; color: #026AA2; }
+.badge.ev-whatsapp { background: #D1FADF; color: #027A48; }
+.badge.ev-get_quote { background: #FEE4E2; color: #B42318; }
+.badge.ev-form_start { background: #FEF0C7; color: #B54708; }
+.badge.ev-video_play { background: #EDE9FE; color: #6D28D9; }
+.stats small.muted { display: block; font-size: 12px; }

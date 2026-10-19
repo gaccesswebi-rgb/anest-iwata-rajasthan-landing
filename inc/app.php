@@ -10,6 +10,15 @@ const TRACK_FIELDS = [
 ];
 
 // Sales pipeline, in order. Shown as the status dropdown in the CRM.
+// Visitor actions logged by cta.php (same events are pushed to the GTM dataLayer). key => CRM label
+const CTA_TYPES = [
+    'call'       => '📞 Call',
+    'whatsapp'   => '💬 WhatsApp',
+    'get_quote'  => '📝 Get Quote click',
+    'form_start' => '✍️ Form started',
+    'video_play' => '▶️ Video play',
+];
+
 const LEAD_STATUSES = [
     'New', 'Contacted', 'Not Reachable', 'Following Up', 'Site Visit Scheduled',
     'Quotation Sent', 'Negotiation', 'Won', 'Lost', 'Not Interested', 'Wrong Lead', 'Duplicate / Spam',
