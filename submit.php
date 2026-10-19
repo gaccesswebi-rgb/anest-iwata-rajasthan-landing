@@ -13,14 +13,23 @@ function back_with_error(string $msg): void
     exit;
 }
 
+/** After-form destination: the main site's thank-you page (tagged) or the local thank-you.php. */
+function thank_you_url(int $leadId): string
+{
+    if (THANK_YOU_URL === '') return "thank-you.php?lead=$leadId";
+    $qs = http_build_query(['source' => 'anest-iwata-lp', 'lead' => $leadId]);
+    return THANK_YOU_URL . (strpos(THANK_YOU_URL, '?') === false ? '?' : '&') . $qs;
+}
+
 function field(string $k, int $max = 200): string
 {
     return mb_substr(trim((string)($_POST[$k] ?? '')), 0, $max);
 }
 
 // Spam guards: hidden honeypot must stay empty, and humans take more than 3s to fill the form.
+// Bots get the plain page (no ?source / lead tag) so they are never counted as a conversion.
 if (field('website') !== '' || (time() - (int)field('ts')) < 3) {
-    header('Location: thank-you.php');
+    header('Location: ' . (THANK_YOU_URL ?: 'thank-you.php'));
     exit;
 }
 
@@ -66,4 +75,4 @@ $pdo->prepare('INSERT INTO leads (' . implode(',', $cols) . ') VALUES (' . rtrim
     ->execute(array_values($row));
 
 // lead id doubles as Google Ads transaction_id so a page refresh doesn't count twice.
-header('Location: thank-you.php?lead=' . $pdo->lastInsertId());
+header('Location: ' . thank_you_url((int)$pdo->lastInsertId()));

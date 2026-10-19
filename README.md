@@ -4,9 +4,9 @@ Plain PHP (7.4+) + SQLite. No WordPress, no MySQL, no Composer.
 
 ```
 index.php        Landing page (Google Ads ke liye)
-submit.php       Form handler -> saves lead -> thank-you.php
+submit.php       Form handler -> saves lead -> https://ahujagroup.in/thank-you/?source=anest-iwata-lp&lead=<id>
 cta.php          Logs Call / WhatsApp button clicks (called by assets/js/main.js)
-thank-you.php    Google Ads conversion fires here
+thank-you.php    Local thank-you page (only used if THANK_YOU_URL in config.php is empty)
 config.php       Phone, GTM / Google Ads IDs, status mapping (git me hai)
 config.local.php Secrets: CRM password hash, feed password, DB file name (git me NAHI – har server pe alag)
 crm/             Leads CRM (login required)
@@ -57,10 +57,13 @@ Har page load pe pehle `page_type` (`landing_page` / `thank_you`) aur `page_name
 | `get_quote_click` | Header / Mobile bar / Industries "Get Quote" | `cta_section` |
 | `form_start` | Form ka pehla field touch | `form_id` (hero/footer), `form_section` |
 | `form_submit` | Form validation pass, submit hone se pehle | `form_id`, `form_section`, `form_product` |
-| `generate_lead` | Thank-you page (lead save ho chuki) | `lead_id` (Ads transaction ID), `form_id`, `form_section`, `lead_product`, `traffic_platform` |
+| `generate_lead` | Sirf local thank-you.php pe (jab `THANK_YOU_URL` khaali ho) | `lead_id` (Ads transaction ID), `form_id`, `form_section`, `lead_product`, `traffic_platform` |
 | `video_play` | YouTube video play | `video_id` |
 
-Google Ads conversion: `generate_lead` pe (Transaction ID = `{{lead_id}}`). Call/WhatsApp conversion triggers me
+**Lead conversion (form):** form save hone ke baad user `https://ahujagroup.in/thank-you/?source=anest-iwata-lp&lead=<id>` pe jaata hai
+(main site, GTM-TWP5TT94). Main site ke GTM me Google Ads conversion tag ka trigger: *Page View – Page URL contains `source=anest-iwata-lp`*,
+aur Transaction ID = URL query `lead` (URL Variable, component: Query, key `lead`) – refresh pe double count nahi hoga.
+Spam/bot submissions bina `source` ke bhejte hain, isliye count nahi hote. Is LP ke GTM (GTM-5CH9GZMQ) me `form_submit` event bhi hai. Call/WhatsApp conversion triggers me
 `cta_section` ≠ `Thank-you Page` condition lagayein. Koi personal data (naam/phone/email) dataLayer me nahi jaata.
 Yahi events (`cta_click`, `get_quote_click`, `form_start`, `video_play`) CRM → **Clicks & Events** me bhi gine jaate hain.
 

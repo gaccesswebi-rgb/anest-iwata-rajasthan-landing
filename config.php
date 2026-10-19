@@ -4,13 +4,17 @@ const SITE_PHONE      = '+91 9001848552';
 const SITE_PHONE_RAW  = '919001848552';           // used for tel: and wa.me links
 const SITE_EMAIL      = 'projects1@ahujagroup.in';
 
+// Where the visitor goes after the form is saved. '?source=anest-iwata-lp&lead=<id>' is appended so the
+// main site's GTM can recognise landing-page leads. Empty = use this folder's own thank-you.php.
+const THANK_YOU_URL   = 'https://ahujagroup.in/thank-you/';
+
 // Google Tag Manager container for this landing page. Leave empty to disable.
 const GTM_ID            = 'GTM-5CH9GZMQ';
 
 // Google Ads conversion tracking WITHOUT GTM. Leave empty if you set up the Ads conversion tags inside GTM
 // (filling both GTM tags and these would count every conversion twice).
 const GADS_ID           = '';   // e.g. 'AW-123456789'
-const GADS_LEAD_LABEL   = '';   // conversion label for form submit (fires on thank-you.php)
+const GADS_LEAD_LABEL   = '';   // conversion label for form submit (fires on thank-you.php – only used when THANK_YOU_URL is empty)
 const GADS_CALL_LABEL   = '';   // optional: conversion label for Call button clicks
 const GADS_WA_LABEL     = '';   // optional: conversion label for WhatsApp button clicks
 
