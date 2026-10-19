@@ -131,3 +131,17 @@ function oci_conversions(PDO $pdo, int $days = 90): array
     $st->execute(array_merge($stages, [date('Y-m-d H:i:s', time() - $days * 86400)]));
     return $st->fetchAll();
 }
+
+/** Requirement dropdown: LRST, EPM and APM are offered as one "Screw Air Compressor" choice. */
+function form_requirements(): array
+{
+    $out = [];
+    foreach (PRODUCTS as $p) {
+        if (preg_match('/^(LRST|Premium Efficiency EPM|High Efficiency APM)\b/', $p['name'])) {
+            if (!in_array('Screw Air Compressor', $out, true)) $out[] = 'Screw Air Compressor';
+            continue;
+        }
+        $out[] = $p['name'];
+    }
+    return $out;
+}

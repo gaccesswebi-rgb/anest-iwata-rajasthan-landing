@@ -53,7 +53,7 @@ function render_form(string $id, string $err): void
             <label for="<?= $id ?>-product">Requirement</label>
             <select id="<?= $id ?>-product" name="product">
                 <option value="">Select product / service</option>
-                <?php foreach (PRODUCTS as $p): ?><option><?= h($p['name']) ?></option><?php endforeach; ?>
+                <?php foreach (form_requirements() as $name): ?><option><?= h($name) ?></option><?php endforeach; ?>
                 <?php foreach (EXTRA_REQUIREMENTS as $x): ?><option><?= h($x) ?></option><?php endforeach; ?>
             </select>
         </div>
@@ -146,9 +146,9 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
 <!-- fonts load without blocking first paint -->
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap"></noscript>
-<link rel="stylesheet" href="assets/css/style.css?v=9">
+<link rel="stylesheet" href="assets/css/style.css?v=10">
 <link rel="preload" as="image" href="assets/img/hero-bg.webp" fetchpriority="high">
-<link rel="preload" as="image" href="assets/img/hero.webp">
+<link rel="preload" as="image" href="assets/img/hero-compressors.webp">
 <?php include __DIR__ . '/inc/gtag.php'; ?>
 </head>
 <body>
@@ -183,7 +183,7 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
     <div class="wrap hero-in">
         <div class="hero-copy">
             <p class="eyebrow"><span class="dot"></span> Authorised Dealer in Rajasthan</p>
-            <h1>Anest Iwata <span>Compressors &amp; Vacuum Pumps</span></h1>
+            <h1><span class="h1-brand">Anest Iwata Motherson</span> Compressors &amp; Vacuum Pumps</h1>
             <p class="lead">Genuine, warranted Anest Iwata Motherson machines — supplied, installed and serviced by Ahuja Group, Jaipur.</p>
             <div class="cat-chips">
                 <a href="#products" data-goto="screw">Screw Compressor</a>
@@ -192,7 +192,8 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
                 <a href="#products" data-goto="vacuum">Vacuum Pumps</a>
             </div>
             <div class="hero-btns">
-                <a class="btn btn-red btn-lg" href="<?= $tel ?>" data-track="call" data-section="Hero"><?= icon('phone') ?> Speak to an Engineer</a>
+                <a class="btn btn-red" href="<?= $tel ?>" data-track="call" data-section="Hero"><?= icon('phone') ?> Call Now</a>
+                <a class="btn btn-wa" href="<?= $waDefault ?>" target="_blank" rel="noopener" data-track="wa" data-section="Hero"><?= icon('whatsapp') ?> WhatsApp</a>
             </div>
             <ul class="hero-facts">
                 <li><strong>1,00,000+</strong> Customers Satisfied Across India</li>
@@ -202,7 +203,7 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
             </ul>
         </div>
         <div class="hero-visual">
-            <img src="assets/img/hero.webp" alt="Anest Iwata screw air compressors" width="540" height="400" fetchpriority="high">
+            <img src="assets/img/hero-compressors.webp" alt="Anest Iwata reciprocating air compressors" width="308" height="389" fetchpriority="high">
         </div>
     </div>
 </section>
@@ -267,7 +268,7 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
         <div class="sec-head center">
             <p class="kicker">Sectors We Serve</p>
             <h2>Industries We Serve Across Rajasthan</h2>
-            <p>From Jaipur’s jewellery workshops to Jodhpur’s textile mills — every major industrial sector across Rajasthan.</p>
+            <p>From Jaipur’s jewellery workshops to Jodhpur and Bhilwara’s textile mills — every major industrial sector across Rajasthan.</p>
         </div>
         <div class="industries">
             <?php foreach ($industries as $i => $name): ?>
