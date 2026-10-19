@@ -7,3 +7,5 @@ TEMP-LOGIN.txt
 # Local tooling
 .claude/
 .DS_Store
+netlify-demo/
+anest-iwata-netlify.zip

@@ -107,25 +107,20 @@ $anest = [
     ['leaf', 'Energy & Sustainability Focus', 'High‑efficiency PM motors and VSD for lower carbon footprint'],
 ];
 
-$ahuja = [
-    ['drafting-compass', 'Technical Expertise & Application Engineering'],
-    ['truck', 'Local Support & Rapid Response'],
-    ['boxes', 'Ready Stock of Popular Models & Spares'],
-    ['clipboard-check', 'Reliable Preventive Service'],
-    ['refresh-ccw', 'Backup Compressor Availability'],
-    ['gauge', 'Energy Audits & Retrofit Solutions'],
-];
-
 $offices = [
-    ['office-head.webp', 'Ahuja Group, Head Office', 'A-185, Prahladpura Industrial Area, 302022 – Jaipur',
-        'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7126.597748867295!2d75.888911!3d26.734837!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dc9fcd2639af3%3A0xc6436a305482c7e!2sAhuja%20Corporation%20Private%20Limited!5e0!3m2!1sen!2sus!4v1782904352029!5m2!1sen!2sus'],
-    ['office-city.webp', 'Ahuja Group, City Office', 'B-85, Bais Godam Industrial Area, 302006 – Jaipur',
-        'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14233.119556267571!2d75.787864!3d26.894611!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db41595555555%3A0xf5ad2c5d7508853a!2sAhuja%20Group!5e0!3m2!1sen!2sin!4v1782904317171!5m2!1sen!2sin'],
+    ['office-head.webp', 'Ahuja Group, Head Office', 'A-185, Prahladpura Industrial Area, 302022 – Jaipur'],
+    ['office-city.webp', 'Ahuja Group, City Office', 'B-85, Bais Godam Industrial Area, 302006 – Jaipur'],
 ];
 
 $faqs = [
     ['Are you the authorised dealer for Anest Iwata in Rajasthan?', 'Yes. Ahuja Group is the authorised dealer for Anest Iwata Motherson (AIM) compressors and vacuum pumps across Rajasthan.'],
-    ['Which AIM products do you supply?', 'We supply the full AIM compressor and vacuum pump range: Lubricated and Oil-Free Reciprocating Compressors, Lubricated Screw Compressors, Oil-Free Scroll Compressors, Rotary Vane Vacuum Pumps, and Reciprocating Vacuum Pumps.'],
+    ['Which AIM products do you supply?', 'We supply the full AIM compressor and vacuum pump range: C-Air, LRST, EPM and APM screw compressors, Crown and other lubricated reciprocating compressors, oil-free reciprocating and scroll compressors, high pressure compressors, and rotary vane and reciprocating vacuum pumps.'],
+    ['What is the C-Air screw compressor range?', 'C-Air is Anest Iwata Motherson’s reliable screw air compressor series from 7.5 HP to 50 HP (5.5 to 37 kW), delivering 23 to 235 CFM at 7 to 12.5 bar. It uses Siemens electrical components, an IP55 TEFC motor with SKF bearings and a 30% oversized cooler for hot Indian conditions.'],
+    ['Does the C-Air series come with an extended warranty?', 'Yes. C-Air compressors come with AIM5 – Anest Iwata Motherson’s Five-Year Care extended warranty. Ask our team for the warranty terms for your model.'],
+    ['Which compressor suits a small workshop or garage?', 'The Crown series lubricated reciprocating compressor is ideal: 1 HP to 3 HP, 4.5 to 13.4 CFM at 10 kg/cm², with 40 to 160 litre tanks and single or three phase motors. It is built for low noise, low vibration, low oil consumption and low maintenance.'],
+    ['Should I choose an oil-free or a lubricated compressor?', 'Choose oil-free when the air touches your product or patients – pharma, food & beverage, hospitals and electronics. Lubricated reciprocating and screw compressors are the economical choice for general manufacturing, fabrication and workshops. Our engineers will recommend the right one for your application.'],
+    ['How do I select the right compressor capacity?', 'Share your air tools or machines, required working pressure and daily running hours. Our engineer will calculate the air demand (CFM) and suggest the right model and tank size. For existing plants we also offer energy audits.'],
+    ['Are Anest Iwata compressors made in India?', 'Anest Iwata Motherson is a joint venture of Anest Iwata Corporation, Japan and the Motherson Group, India, with two manufacturing plants in India. Performance is rated as per Japanese Industrial Standards (JIS) and free air delivery is measured as per ISO 1217.'],
     ['Do you handle installation and piping?', 'Yes. We provide a complete turnkey solution: site assessment, compressed air piping system design and installation, compressor commissioning, and handover. You deal with one team from start to finish.'],
     ['What is the delivery and lead time in Rajasthan?', 'Standard models are available ex-stock or on short lead times. Contact us with your requirement and we will confirm availability and delivery schedule for your location.'],
     ['Do you offer after-sales service and spare parts?', 'Yes. We maintain AIM spare parts inventory at our Jaipur facility and have a trained service team available across Rajasthan. Call ' . SITE_PHONE . ' for service enquiries.'],
@@ -142,11 +137,17 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
 <title>Anest Iwata Air Compressor Dealer in Rajasthan | Ahuja Group, Jaipur</title>
 <meta name="description" content="Authorised Anest Iwata Motherson dealer in Rajasthan. Screw, oil-free & reciprocating air compressors and vacuum pumps. Ex-stock delivery, installation, AMC & spares. Call <?= SITE_PHONE ?>.">
 <meta name="theme-color" content="#0E1621">
-<link rel="icon" href="assets/img/aim-logo.webp">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/icon-192.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=8">
+<!-- fonts load without blocking first paint -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/style.css?v=9">
+<link rel="preload" as="image" href="assets/img/hero-bg.webp" fetchpriority="high">
 <link rel="preload" as="image" href="assets/img/hero.webp">
 <?php include __DIR__ . '/inc/gtag.php'; ?>
 </head>
@@ -165,14 +166,14 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
 <header class="topbar">
     <div class="wrap topbar-in">
         <a class="brand" href="#top" aria-label="Anest Iwata Motherson – home">
-            <img src="assets/img/aim-logo.webp" alt="Anest Iwata Motherson" width="120" height="45">
+            <img src="assets/img/aim-logo.webp" alt="Anest Iwata Motherson" width="140" height="52">
         </a>
         <nav class="mainnav" aria-label="Sections">
             <?php foreach ($nav as $id => $label): ?><a href="#<?= $id ?>"><?= $label ?></a><?php endforeach; ?>
         </nav>
         <div class="topbar-cta">
-            <a class="btn btn-wa btn-sm hide-sm" href="<?= $waDefault ?>" target="_blank" rel="noopener" data-track="wa" data-section="Header"><?= icon('whatsapp') ?> WhatsApp</a>
-            <a class="btn btn-red btn-sm" href="#footer">Get Quote</a>
+            <a class="btn btn-wa btn-sm" href="<?= $waDefault ?>" target="_blank" rel="noopener" data-track="wa" data-section="Header" aria-label="WhatsApp"><?= icon('whatsapp') ?> <span class="hide-sm">WhatsApp</span></a>
+            <a class="btn btn-red btn-sm" href="#enquiry">Get Quote</a>
         </div>
     </div>
 </header>
@@ -191,26 +192,41 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
                 <a href="#products" data-goto="vacuum">Vacuum Pumps</a>
             </div>
             <div class="hero-btns">
-                <a class="btn btn-red" href="<?= $tel ?>" data-track="call" data-section="Hero"><?= icon('phone') ?> Call Now</a>
-                <a class="btn btn-wa" href="<?= $waDefault ?>" target="_blank" rel="noopener" data-track="wa" data-section="Hero"><?= icon('whatsapp') ?> WhatsApp</a>
+                <a class="btn btn-red btn-lg" href="<?= $tel ?>" data-track="call" data-section="Hero"><?= icon('phone') ?> Speak to an Engineer</a>
             </div>
-            <div class="stage">
-                <img src="assets/img/hero.webp" alt="Anest Iwata screw air compressors" width="540" height="400">
-                <ul class="stage-facts">
-                    <li><strong>1,00,000+</strong> Customers Satisfied Across India</li>
-                    <li><strong>Since 1926</strong> Serving Industry</li>
-                    <li><strong>Sales, Service</strong> &amp; Spare Parts</li>
-                    <li><strong>Site Visit</strong> &amp; Installation Across Rajasthan</li>
-                </ul>
-            </div>
+            <ul class="hero-facts">
+                <li><strong>1,00,000+</strong> Customers Satisfied Across India</li>
+                <li><strong>Since 1926</strong> Serving Industry</li>
+                <li><strong>Sales, Service</strong> &amp; Spare Parts</li>
+                <li><strong>Site Visit</strong> &amp; Installation Across Rajasthan</li>
+            </ul>
         </div>
-        <aside class="form-card" id="enquiry">
+        <div class="hero-visual">
+            <img src="assets/img/hero.webp" alt="Anest Iwata screw air compressors" width="540" height="400" fetchpriority="high">
+        </div>
+    </div>
+</section>
+
+<section class="sec quote-sec" id="enquiry">
+    <div class="wrap quote-in">
+        <div class="quote-copy">
+            <p class="kicker">Get a Quote</p>
+            <h2>Tell us your requirement – get the right model and best price</h2>
+            <p>Share your application, HP / CFM (if known) and city. Our engineer calls you back within 2 hours with the right model options and price.</p>
+            <ul class="quote-ticks">
+                <li><?= icon('check') ?> Model selection by application engineers</li>
+                <li><?= icon('check') ?> Genuine Anest Iwata Motherson machines with warranty</li>
+                <li><?= icon('check') ?> Ex-stock popular models &amp; spares in Jaipur</li>
+                <li><?= icon('check') ?> Installation, AMC &amp; service across Rajasthan</li>
+            </ul>
+        </div>
+        <div class="form-card">
             <div class="form-head">
                 <h2>Get a Quote Today</h2>
-                <p>Tell us your requirement — get the right model and best price.</p>
+                <p>Mobile number is required – we respond within 2 hours.</p>
             </div>
             <?php render_form('hero', $errForm === 'hero' ? $err : ''); ?>
-        </aside>
+        </div>
     </div>
 </section>
 
@@ -255,9 +271,9 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
         </div>
         <div class="industries">
             <?php foreach ($industries as $i => $name): ?>
-            <figure class="ind"><img src="assets/img/ind-<?= $i + 1 ?>.webp" alt="<?= h($name) ?>" loading="lazy" width="440" height="365"><figcaption><?= h($name) ?></figcaption></figure>
+            <figure class="ind"><img src="assets/img/ind-<?= $i + 1 ?>.webp" alt="<?= h($name) ?>" loading="lazy" width="360" height="299"><figcaption><?= h($name) ?></figcaption></figure>
             <?php endforeach; ?>
-            <a class="ind ind-cta" href="#footer"><span>Your industry?</span><strong>Get the right compressor</strong><?= icon('arrow-right') ?></a>
+            <a class="ind ind-cta" href="#enquiry"><span>Your industry?</span><strong>Get the right compressor</strong><?= icon('arrow-right') ?></a>
         </div>
     </div>
 </section>
@@ -269,17 +285,16 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
                 <p class="kicker">Our Presence</p>
                 <h2>Our Footprint Across Rajasthan</h2>
                 <p>Strategically operating from our corporate hubs in Jaipur, we deliver top-tier industrial solutions, prompt sales assistance, and expert technical support to every major city and industrial cluster across Rajasthan.</p>
-                <img class="map" src="assets/img/rajasthan-map.webp" alt="Ahuja Group coverage across Rajasthan" loading="lazy" width="1080" height="1006">
+                <img class="map" src="assets/img/rajasthan-map.webp" alt="Ahuja Group coverage across Rajasthan" loading="lazy" width="840" height="782">
             </div>
             <div class="offices">
-                <?php foreach ($offices as [$img, $title, $addr, $map]): ?>
+                <?php foreach ($offices as [$img, $title, $addr]): ?>
                 <article class="office">
                     <img src="assets/img/<?= $img ?>" alt="<?= h($title) ?>" loading="lazy" width="389" height="257">
                     <div class="office-body">
                         <h3><?= h($title) ?></h3>
                         <p><?= icon('map-pin') ?> <?= h($addr) ?></p>
                     </div>
-                    <iframe src="<?= h($map) ?>" title="Map – <?= h($title) ?>" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </article>
                 <?php endforeach; ?>
             </div>
@@ -317,7 +332,7 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
         <div class="awards">
             <?php foreach ($awards as [$img, $cap]): ?>
             <figure>
-                <a href="assets/img/<?= $img ?>" data-lightbox><img src="assets/img/<?= $img ?>" alt="<?= h($cap) ?>" loading="lazy" width="800" height="851"></a>
+                <a href="assets/img/<?= $img ?>" data-lightbox><img src="assets/img/<?= $img ?>" alt="<?= h($cap) ?>" loading="lazy" width="560" height="596"></a>
                 <figcaption><?= h($cap) ?></figcaption>
             </figure>
             <?php endforeach; ?>
@@ -335,7 +350,7 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
         <div class="partner">
             <div class="video">
                 <button class="video-btn" type="button" data-yt="CpEE-Qftl14" aria-label="Play Ahuja Group video">
-                    <img src="assets/img/video-thumb.jpg" alt="" loading="lazy" width="480" height="360">
+                    <img src="assets/img/video-thumb.webp" alt="" loading="lazy" width="480" height="360">
                     <span class="play"><?= icon('play') ?></span>
                 </button>
             </div>
@@ -358,20 +373,6 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
         <div class="anest">
             <?php foreach ($anest as [$ic, $t, $d]): ?>
             <article><span class="badge-ic blue"><?= icon($ic) ?></span><h3><?= h($t) ?></h3><p><?= h($d) ?></p></article>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<section class="sec sec-soft">
-    <div class="wrap">
-        <div class="sec-head center">
-            <p class="kicker">Ahuja Group</p>
-            <h2>Why Choose Ahuja Group</h2>
-        </div>
-        <div class="ahuja">
-            <?php foreach ($ahuja as [$ic, $t]): ?>
-            <div><span class="badge-ic"><?= icon($ic) ?></span><h3><?= h($t) ?></h3></div>
             <?php endforeach; ?>
         </div>
     </div>
@@ -419,11 +420,11 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
 <footer class="footer">
     <div class="wrap footer-in">
         <div class="footer-brand">
-            <img src="assets/img/ahuja-logo.jpg" alt="Ahuja Group" width="140" height="70" class="footer-logo">
+            <img src="assets/img/ahuja-logo.webp" alt="Ahuja Group" width="140" height="70" class="footer-logo" loading="lazy">
             <p>Authorised dealer for Anest Iwata Motherson compressors &amp; vacuum pumps in Rajasthan.</p>
         </div>
         <div>
-            <h4>Contact Us</h4>
+            <h3>Contact Us</h3>
             <ul class="footer-list">
                 <li><?= icon('map-pin') ?> B-85, Bais Godam Industrial Area, 302006 – Jaipur</li>
                 <li><?= icon('phone') ?> <a href="<?= $tel ?>" data-track="call" data-section="Footer"><?= SITE_PHONE ?></a></li>
@@ -431,7 +432,7 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
             </ul>
         </div>
         <div>
-            <h4>Links</h4>
+            <h3>Links</h3>
             <ul class="footer-links">
                 <?php foreach ($nav as $id => $label): ?><li><a href="#<?= $id ?>"><?= $label ?></a></li><?php endforeach; ?>
                 <li><a href="https://ahujagroup.in/terms-of-use/" target="_blank" rel="noopener">Terms of Use</a></li>
@@ -445,7 +446,7 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
 <nav class="mobile-bar" aria-label="Quick contact">
     <a href="<?= $tel ?>" data-track="call" data-section="Mobile Sticky Bar"><?= icon('phone') ?> Call</a>
     <a href="<?= $waDefault ?>" target="_blank" rel="noopener" data-track="wa" data-section="Mobile Sticky Bar" class="mb-wa"><?= icon('whatsapp') ?> WhatsApp</a>
-    <a href="#footer" class="mb-quote">Get Quote</a>
+    <a href="#enquiry" class="mb-quote">Get Quote</a>
 </nav>
 
 <dialog class="lightbox" id="lightbox" aria-label="Award image">
@@ -453,6 +454,6 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
     <img src="" alt="">
 </dialog>
 
-<script src="assets/js/main.js?v=5"></script>
+<script src="assets/js/main.js?v=6" defer></script>
 </body>
 </html>

@@ -29,9 +29,11 @@ const PRODUCTS = [
     ['cat' => 'vacuum',        'name' => 'Reciprocating Vacuum Pump',                          'img' => 'p-recip-vacuum.webp',  'specs' => ['2 HP to 10 HP', '35 to 152.6 CFM']],
     ['cat' => 'recip',         'name' => 'Lubricated Reciprocating Air Compressor',            'img' => 'p-lubricated.webp',    'specs' => ['1 HP to 20 HP', '7 to 12 Bar']],
     ['cat' => 'recip',         'name' => 'High Pressure Reciprocating Lubricated Compressor',  'img' => 'p-high-pressure.webp', 'specs' => ['15 HP to 20 HP', '30 Bar']],
+    ['cat' => 'recip',         'name' => 'Crown Series Reciprocating Compressor',              'img' => 'p-crown.webp',         'specs' => ['1 HP to 3 HP', '10 kg/cm² working pressure', '4.5 to 13.4 CFM', '40 to 160 Ltr tank']],
     ['cat' => 'screw',         'name' => 'LRST Series Compact Screw Air Compressor',           'img' => 'p-lrst.webp',          'specs' => ['10 HP to 20 HP', '8 to 10 Bar', '14 to 81 CFM']],
     ['cat' => 'screw',         'name' => 'Premium Efficiency EPM Series Screw Air Compressor', 'img' => 'p-epm.webp',           'specs' => ['25 HP to 220 HP', '7 to 10 Bar', '131 to 954 CFM']],
     ['cat' => 'screw',         'name' => 'High Efficiency APM Screw Air Compressor',           'img' => 'p-apm.webp',           'specs' => ['10 HP to 100 HP', '7 to 16 Bar', '41 to 471 CFM']],
+    ['cat' => 'screw',         'name' => 'C-Air Screw Air Compressor',                         'img' => 'p-cair.webp',          'specs' => ['7.5 HP to 50 HP', '7 to 12.5 Bar', '23 to 235 CFM', '5-Year Extended Warranty (AIM5)']],
 ];
 
 const EXTRA_REQUIREMENTS = ['AMC / Service', 'Spare Parts', 'Not sure – need expert advice'];

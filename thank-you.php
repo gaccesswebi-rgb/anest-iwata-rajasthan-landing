@@ -9,9 +9,10 @@ $lead = (int)($_GET['lead'] ?? 0);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Thank You | Ahuja Group – Anest Iwata Rajasthan</title>
-<link rel="icon" href="assets/img/aim-logo.webp">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=8">
+<link rel="stylesheet" href="assets/css/style.css?v=9">
 <?php if ($lead): ?>
 <script>
   // For GTM: trigger on Custom Event "generate_lead"; use lead_id as the Google Ads transaction ID (no double counting on refresh).
@@ -45,6 +46,6 @@ $lead = (int)($_GET['lead'] ?? 0);
         <p style="margin-top:22px"><a href="./">← Back to products</a></p>
     </div>
 </main>
-<script src="assets/js/main.js?v=5"></script>
+<script src="assets/js/main.js?v=6" defer></script>
 </body>
 </html>
