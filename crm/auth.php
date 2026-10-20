@@ -39,12 +39,12 @@ function crm_header(string $title): void
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title><?= h($title) ?> · Leads CRM</title>
-<link rel="stylesheet" href="crm.css?v=6">
+<link rel="stylesheet" href="crm.css?v=7">
 </head>
 <body>
 <?php if (!empty($_SESSION['crm_user'])): ?>
 <header class="bar">
-    <a class="logo" href="./">Leads CRM <small>Anest Iwata · Rajasthan</small></a>
+    <a class="logo" href="./">Leads CRM <small>Anest Iwata · QuickAir</small></a>
     <nav><a href="./">Leads</a><a href="./#campaigns">Campaigns</a><a href="clicks.php">Clicks &amp; Events</a><a href="google-ads.php">Google Ads Sync</a><a href="logout.php">Logout</a></nav>
 </header>
 <?php endif; ?>
@@ -65,15 +65,29 @@ function lead_filters(array $q): array
     $w = [];
     $p = [];
     if (($s = trim($q['q'] ?? '')) !== '') {
-        $w[] = '(name LIKE ? OR phone LIKE ? OR city LIKE ? OR email LIKE ? OR keyword LIKE ? OR utm_term LIKE ?)';
-        array_push($p, ...array_fill(0, 6, "%$s%"));
+        $w[] = '(name LIKE ? OR phone LIKE ? OR city LIKE ? OR email LIKE ? OR company LIKE ? OR keyword LIKE ? OR utm_term LIKE ?)';
+        array_push($p, ...array_fill(0, 7, "%$s%"));
     }
+    if (isset(SITES[$q['site'] ?? ''])) { $w[] = 'site = ?'; $p[] = $q['site']; }
     if (!empty($q['status']))   { $w[] = 'status = ?';   $p[] = $q['status']; }
     if (!empty($q['platform'])) { $w[] = 'platform = ?'; $p[] = $q['platform']; }
     if (isset($q['campaign']) && $q['campaign'] !== '') { $w[] = CAMPAIGN_SQL . ' = ?'; $p[] = $q['campaign']; }
     if (!empty($q['from']))     { $w[] = 'created_at >= ?'; $p[] = $q['from'] . ' 00:00:00'; }
     if (!empty($q['to']))       { $w[] = 'created_at <= ?'; $p[] = $q['to'] . ' 23:59:59'; }
     return [$w ? 'WHERE ' . implode(' AND ', $w) : '', $p];
+}
+
+function site_badge(?string $site): string
+{
+    return '<span class="site site-' . h($site) . '">' . h(SITES[$site] ?? $site) . '</span>';
+}
+
+/** Landing-page filter dropdown, shared by the CRM pages. */
+function site_select(): string
+{
+    $html = '<select name="site"><option value="">All pages</option>';
+    foreach (SITES as $k => $label) $html .= '<option value="' . $k . '"' . (($_GET['site'] ?? '') === $k ? ' selected' : '') . '>' . h($label) . '</option>';
+    return $html . '</select>';
 }
 
 function badge(string $status): string

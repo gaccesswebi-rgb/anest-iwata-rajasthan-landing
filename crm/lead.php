@@ -82,6 +82,8 @@ crm_header('Lead #' . $l['id']);
             <?php if ($l['email']): ?><a class="btn btn-light" href="mailto:<?= h($l['email']) ?>"><?= h($l['email']) ?></a><?php endif; ?>
         </div>
         <dl class="kv">
+            <dt>Landing page</dt><dd><?= site_badge($l['site']) ?></dd>
+            <?php if ($l['company']): ?><dt>Company</dt><dd><?= h($l['company']) ?></dd><?php endif; ?>
             <dt>City</dt><dd><?= h($l['city']) ?: '—' ?></dd>
             <dt>Requirement</dt><dd><?= h($l['product']) ?: '—' ?></dd>
             <dt>Message</dt><dd><?= nl2br(h($l['message'])) ?: '—' ?></dd>

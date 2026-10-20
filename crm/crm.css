@@ -122,3 +122,9 @@ td small { color: var(--muted); }
 .badge.ev-form_start { background: #FEF0C7; color: #B54708; }
 .badge.ev-video_play { background: #EDE9FE; color: #6D28D9; }
 .stats small.muted { display: block; font-size: 12px; }
+
+/* landing-page badges */
+.site { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.site-anest-iwata { background: #FEE4E2; color: #B42318; }
+.site-quickair { background: #E0EAFF; color: #1E3A8A; }
+.badge.ev-email { background: #F2F4F7; color: #344054; }

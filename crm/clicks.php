@@ -4,7 +4,7 @@ require_login();
 
 $pdo = db();
 // Reuses the lead filters (platform / campaign / date); q and status are not used on this page.
-$base = array_intersect_key($_GET, array_flip(['platform', 'campaign', 'from', 'to']));
+$base = array_intersect_key($_GET, array_flip(['site', 'platform', 'campaign', 'from', 'to']));
 [$where, $params] = lead_filters($base);
 [$leadWhere, $leadParams] = lead_filters($base);
 $type = $_GET['type'] ?? '';
@@ -75,7 +75,7 @@ function count_table(string $title, array $rows): void
 crm_header('Clicks & Events');
 ?>
 <h1>Clicks &amp; visitor events</h1>
-<p class="muted">Every Call, WhatsApp and Get Quote tap, every form a visitor starts filling, and every video play on the landing page — the same events that go to Google Tag Manager. Caller numbers are not available; this shows how many, where on the page, and which ad they came from.</p>
+<p class="muted">Every Call, WhatsApp, Email and Get Quote tap, every form a visitor starts filling, and every video play on both landing pages (Anest Iwata, QuickAir) — the same events that go to Google Tag Manager. Caller numbers are not available; this shows how many, where on the page, and which ad they came from.</p>
 
 <section class="stats">
     <?php foreach (CTA_TYPES as $k => $label): ?>
@@ -85,6 +85,7 @@ crm_header('Clicks & Events');
 </section>
 
 <form class="filters" method="get">
+    <?= site_select() ?>
     <select name="type"><option value="">All events</option>
         <?php foreach (CTA_TYPES as $k => $label): ?><option value="<?= $k ?>" <?= $type === $k ? 'selected' : '' ?>><?= h($label) ?></option><?php endforeach; ?>
     </select>
@@ -126,12 +127,13 @@ crm_header('Clicks & Events');
 <h2>Recent events</h2>
 <div class="table-wrap">
 <table>
-    <thead><tr><th>Date</th><th>Event</th><th>Section</th><th>Product</th><th>Platform</th><th>Campaign / Keyword</th><th>Device</th></tr></thead>
+    <thead><tr><th>Date</th><th>Page</th><th>Event</th><th>Section</th><th>Product</th><th>Platform</th><th>Campaign / Keyword</th><th>Device</th></tr></thead>
     <tbody>
-    <?php if (!$recent): ?><tr><td colspan="7" class="empty">No events yet.</td></tr><?php endif; ?>
+    <?php if (!$recent): ?><tr><td colspan="8" class="empty">No events yet.</td></tr><?php endif; ?>
     <?php foreach ($recent as $r): ?>
         <tr>
             <td class="nowrap"><?= date('d M y', strtotime($r['created_at'])) ?><br><small><?= date('h:i A', strtotime($r['created_at'])) ?></small></td>
+            <td><?= site_badge($r['site']) ?></td>
             <td><span class="badge ev-<?= h($r['type']) ?>"><?= h(CTA_TYPES[$r['type']] ?? $r['type']) ?></span></td>
             <td><?= h($r['section']) ?></td>
             <td class="req"><?= h($r['product']) ?: '—' ?></td>

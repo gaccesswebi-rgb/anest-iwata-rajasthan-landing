@@ -1,5 +1,5 @@
 <?php
-// Receives navigator.sendBeacon() for visitor actions (CTA_TYPES: call, whatsapp, get_quote, form_start, video_play) and logs them.
+// Receives navigator.sendBeacon() for visitor actions (CTA_TYPES: call, whatsapp, get_quote, form_start, video_play, email) from every landing page (SITES) and logs them.
 require __DIR__ . '/inc/app.php';
 
 http_response_code(204);
@@ -24,6 +24,7 @@ if ($st->fetchColumn() >= 60) exit;
 $row = [
     'created_at' => date('Y-m-d H:i:s'),
     'type' => $type,
+    'site' => isset(SITES[$_POST['site'] ?? '']) ? $_POST['site'] : 'anest-iwata',
     'section' => $val('section', 40),
     'product' => $val('product', 120),
     'platform' => detect_platform($track),

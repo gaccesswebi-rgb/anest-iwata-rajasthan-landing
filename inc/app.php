@@ -17,6 +17,13 @@ const CTA_TYPES = [
     'get_quote'  => '📝 Get Quote click',
     'form_start' => '✍️ Form started',
     'video_play' => '▶️ Video play',
+    'email'      => '✉️ Email click',
+];
+
+// Landing pages that share this CRM. key is stored in leads.site / clicks.site.
+const SITES = [
+    'anest-iwata' => 'Anest Iwata',
+    'quickair'    => 'QuickAir',
 ];
 
 const LEAD_STATUSES = [
@@ -88,6 +95,11 @@ function db(): PDO
         lead_id INTEGER NOT NULL, status TEXT NOT NULL, created_at TEXT NOT NULL
     )');
     $pdo->exec('CREATE INDEX IF NOT EXISTS idx_events_lead ON lead_events(lead_id)');
+    // Columns added later (QuickAir page): which landing page, and company name. Existing rows = Anest Iwata.
+    $has = fn($table, $col) => in_array($col, array_column($pdo->query("PRAGMA table_info($table)")->fetchAll(), 'name'), true);
+    if (!$has('leads', 'site'))    $pdo->exec("ALTER TABLE leads ADD COLUMN site TEXT NOT NULL DEFAULT 'anest-iwata'");
+    if (!$has('leads', 'company')) $pdo->exec('ALTER TABLE leads ADD COLUMN company TEXT');
+    if (!$has('clicks', 'site'))   $pdo->exec("ALTER TABLE clicks ADD COLUMN site TEXT NOT NULL DEFAULT 'anest-iwata'");
     return $pdo;
 }
 

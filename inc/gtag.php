@@ -1,6 +1,6 @@
 <?php
-// Include right after <meta charset> / viewport. Pages may set $pageType and $dlEvents before including.
-$dlPush = array_merge([['page_type' => $pageType ?? 'landing_page', 'page_name' => 'anest-iwata-rajasthan']], $dlEvents ?? []);
+// Include right after <meta charset> / viewport. Pages may set $pageType, $pageName and $dlEvents before including.
+$dlPush = array_merge([['page_type' => $pageType ?? 'landing_page', 'page_name' => $pageName ?? 'anest-iwata-rajasthan']], $dlEvents ?? []);
 ?>
 <script>
   window.dataLayer = window.dataLayer || [];

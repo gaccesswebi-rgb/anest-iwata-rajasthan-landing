@@ -7,6 +7,7 @@ index.php        Landing page (Google Ads ke liye)
 submit.php       Form handler -> saves lead -> https://ahujagroup.in/thank-you/?source=anest-iwata-lp&lead=<id>
 cta.php          Logs Call / WhatsApp button clicks (called by assets/js/main.js)
 thank-you.php    Local thank-you page (only used if THANK_YOU_URL in config.php is empty)
+quickair/        QuickAir aluminium piping landing page (index.php) + its own thank-you.php – same CRM, GTM and events
 config.php       Phone, GTM / Google Ads IDs, status mapping (git me hai)
 config.local.php Secrets: CRM password hash, feed password, DB file name (git me NAHI – har server pe alag)
 crm/             Leads CRM (login required)
@@ -68,6 +69,15 @@ Spam/bot submissions bina `source` ke bhejte hain, isliye count nahi hote. Is LP
 Yahi events (`cta_click`, `get_quote_click`, `form_start`, `video_play`) CRM → **Clicks & Events** me bhi gine jaate hain.
 
 Page `noindex, nofollow` hai (meta tag + `X-Robots-Tag` header) – sirf ads traffic ke liye.
+
+## QuickAir page (`/quickair/`)
+
+- Form `../submit.php` pe jaata hai (`site=quickair`), lead CRM me save hoti hai, phir **QuickAir ka apna** `quickair/thank-you.php?lead=<id>` khulta hai (`generate_lead` yahin fire hota hai).
+  Anest Iwata ka form main site `https://ahujagroup.in/thank-you/` pe jaata hai – dono ke thank-you alag hain.
+- QuickAir form me Company aur Email zaroori hain; "What do you need" → CRM me Requirement; jis CTA se form khula ("Speak to an Engineer") → Message.
+- Same GTM (`GTM-5CH9GZMQ`) aur same events. Fark sirf `page_name`: `anest-iwata-rajasthan` ya `quickair` – GTM me isse dono pages alag kar sakte hain.
+  QuickAir me extra: email link click → `cta_click` with `cta_type` = `email`; "Speak to an Engineer" buttons → `get_quote_click` (+ `cta_label`).
+- CRM: Leads aur Clicks & Events pages pe **Page** filter (All / Anest Iwata / QuickAir) aur Page column.
 
 ## CRM me kya milta hai
 

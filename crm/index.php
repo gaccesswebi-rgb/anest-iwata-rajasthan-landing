@@ -72,6 +72,7 @@ crm_header('Leads');
 
 <form class="filters" method="get">
     <input name="q" value="<?= $f('q') ?>" placeholder="Search name, phone, city, keyword">
+    <?= site_select() ?>
     <select name="status"><option value="">All status</option>
         <?php foreach (LEAD_STATUSES as $s): ?><option <?= ($_GET['status'] ?? '') === $s ? 'selected' : '' ?>><?= $s ?></option><?php endforeach; ?>
     </select>
@@ -90,17 +91,18 @@ crm_header('Leads');
 
 <div class="table-wrap">
 <table class="leads">
-    <thead><tr><th>#</th><th>Date</th><th>Name / Phone</th><th>City</th><th>Requirement</th><th>Platform</th><th>Campaign / Keyword</th><th>Status</th><th></th></tr></thead>
+    <thead><tr><th>#</th><th>Page</th><th>Date</th><th>Name / Phone</th><th>City / Company</th><th>Requirement</th><th>Platform</th><th>Campaign / Keyword</th><th>Status</th><th></th></tr></thead>
     <tbody>
-    <?php if (!$leads): ?><tr><td colspan="9" class="empty">No leads yet.</td></tr><?php endif; ?>
+    <?php if (!$leads): ?><tr><td colspan="10" class="empty">No leads yet.</td></tr><?php endif; ?>
     <?php foreach ($leads as $l): ?>
         <tr class="<?= $l['status'] === 'New' ? 'is-new' : '' ?>">
             <td><?= $l['id'] ?></td>
+            <td><?= site_badge($l['site']) ?></td>
             <td class="nowrap"><?= date('d M y', strtotime($l['created_at'])) ?><br><small><?= date('h:i A', strtotime($l['created_at'])) ?></small></td>
             <td><strong><?= h($l['name']) ?></strong><br>
                 <a href="tel:+91<?= h($l['phone']) ?>"><?= h($l['phone']) ?></a> ·
                 <a href="https://wa.me/91<?= h($l['phone']) ?>" target="_blank" rel="noopener">WA</a></td>
-            <td><?= h($l['city']) ?></td>
+            <td><?= h($l['city']) ?><?php if ($l['company']): ?><br><small><?= h($l['company']) ?></small><?php endif; ?></td>
             <td class="req"><?= h($l['product']) ?></td>
             <td><?= platform_badge($l['platform'] ?? '') ?></td>
             <td class="req"><?= h(campaign_label($l)) ?><?php $kw = $l['keyword'] ?: $l['utm_term']; if ($kw): ?><br><small>🔑 <?= h($kw) ?></small><?php endif; ?></td>
