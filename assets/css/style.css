@@ -17,10 +17,11 @@
   --head: "Barlow Condensed", "Arial Narrow", sans-serif;
   --body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
   --header-h: 72px;
+  --topbar-h: 40px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 12px); -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + var(--topbar-h) + 12px); -webkit-text-size-adjust: 100%; }
 body { margin: 0; font: 400 17px/1.6 var(--body); color: var(--ink); background: var(--white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 img { max-width: 100%; height: auto; display: block; }
 h1, h2, h3, h4 { font-family: var(--head); font-weight: 700; line-height: 1.08; margin: 0; letter-spacing: .2px; }
@@ -54,7 +55,8 @@ a { color: inherit; }
 .utility-links .ic { color: var(--red); }
 
 /* Header */
-.topbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, .97); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.sticky-head { position: sticky; top: 0; z-index: 50; }
+.topbar { position: relative; background: rgba(255, 255, 255, .97); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 .topbar-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: var(--header-h); }
 .brand img { width: 140px; height: auto; }
 .mainnav { display: flex; gap: 22px; }
@@ -220,7 +222,7 @@ a { color: inherit; }
 
 /* FAQ */
 .faq-wrap { display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: start; }
-.faq-wrap .sec-head { margin-bottom: 0; position: sticky; top: calc(var(--header-h) + 24px); }
+.faq-wrap .sec-head { margin-bottom: 0; position: sticky; top: calc(var(--header-h) + var(--topbar-h) + 24px); }
 .faq { display: grid; gap: 12px; }
 .faq details { border: 1px solid var(--line); border-radius: 14px; background: #fff; transition: box-shadow .2s; }
 .faq details[open] { box-shadow: var(--shadow-sm); border-color: transparent; }
@@ -289,7 +291,7 @@ a { color: inherit; }
   .ind { aspect-ratio: 4 / 3; }
 }
 @media (max-width: 640px) {
-  :root { --header-h: 60px; }
+  :root { --header-h: 60px; --topbar-h: 36px; }
   body { font-size: 16px; padding-bottom: 64px; }
   .wrap { padding: 0 16px; }
   .hide-sm { display: none; }

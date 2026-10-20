@@ -148,13 +148,14 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
 <!-- fonts load without blocking first paint -->
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap"></noscript>
-<link rel="stylesheet" href="assets/css/style.css?v=11">
+<link rel="stylesheet" href="assets/css/style.css?v=12">
 <link rel="preload" as="image" href="assets/img/hero-bg.webp" fetchpriority="high">
 <link rel="preload" as="image" href="assets/img/hero-compressors.webp">
 </head>
 <body>
 <?php include __DIR__ . '/inc/gtm-body.php'; ?>
 
+<div class="sticky-head"><!-- phone/email bar + header stay visible while scrolling -->
 <div class="utility">
     <div class="wrap utility-in">
         <span class="utility-tag">Authorised Dealer · Anest Iwata Motherson · Rajasthan</span>
@@ -179,6 +180,7 @@ $nav = ['products' => 'Products', 'industries' => 'Industries', 'location' => 'L
         </div>
     </div>
 </header>
+</div>
 
 <main id="top">
 <section class="hero">

@@ -20,10 +20,11 @@
   --f-eyebrow: "IBM Plex Sans", system-ui, sans-serif;
   --f-body: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
   --header-h: 72px;
+  --topbar-h: 38px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 8px); -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + var(--topbar-h) + 8px); -webkit-text-size-adjust: 100%; }
 body { margin: 0; font: 400 16px/1.6 var(--f-body); color: var(--text); background: var(--white); }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -65,7 +66,8 @@ section { padding: 72px 0; }
 .topbar .ic { width: 16px; height: 16px; color: var(--sky); }
 
 /* Header */
-.site-header { position: sticky; top: 0; z-index: 50; background: var(--white); border-bottom: 3px solid var(--navy); box-shadow: 0 2px 12px rgba(21,42,74,.06); }
+.sticky-head { position: sticky; top: 0; z-index: 50; }
+.site-header { position: relative; background: var(--white); border-bottom: 3px solid var(--navy); box-shadow: 0 2px 12px rgba(21,42,74,.06); }
 .header-inner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 20px; height: var(--header-h); }
 .brand img { height: 52px; width: auto; }
 .header-actions { display: flex; align-items: center; gap: 12px; }
@@ -212,7 +214,7 @@ section { padding: 72px 0; }
 
 /* Industries */
 .ind-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 28px; align-items: start; }
-.ind-map { border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; background: var(--white); position: sticky; top: calc(var(--header-h) + 20px); }
+.ind-map { border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; background: var(--white); position: sticky; top: calc(var(--header-h) + var(--topbar-h) + 20px); }
 .ind-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .ind { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
 .ind-wide { grid-column: 1 / -1; }
@@ -300,7 +302,7 @@ section { padding: 72px 0; }
   .topbar-inner { justify-content: space-between; gap: 10px; font-size: 13px; }
   .brand img { height: 44px; }
   .wa-icon, .menu-toggle { width: 42px; height: 42px; }
-  .main-nav { left: 0; right: 0; width: auto; border-radius: 0; max-height: calc(100vh - var(--header-h) - 40px); }
+  .main-nav { left: 0; right: 0; width: auto; border-radius: 0; max-height: calc(100vh - var(--header-h) - var(--topbar-h) - 40px); }
   h2 { margin-bottom: 20px; }
   .hero { padding-top: 32px; }
   .lead { font-size: 16px; }

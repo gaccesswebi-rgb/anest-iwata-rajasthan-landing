@@ -37,7 +37,7 @@ if ($lead) {
 <!-- fonts load without blocking first paint -->
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@500;600&family=Roboto:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@500;600&family=Roboto:wght@400;500;700&display=swap"></noscript>
-<link rel="stylesheet" href="assets/css/style.css?v=6">
+<link rel="stylesheet" href="assets/css/style.css?v=7">
 </head>
 <body class="ty-page">
 <?php include __DIR__ . '/../inc/gtm-body.php'; ?>
@@ -54,6 +54,7 @@ if ($lead) {
 </svg>
 
 <!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="sticky-head"><!-- top bar + header stay visible while scrolling -->
 <div class="topbar">
   <div class="container topbar-inner">
     <a href="tel:+919001848552" data-track="phone" data-place="topbar"><svg class="ic"><use href="#i-phone"/></svg><span>+91 90018 48552</span></a>
@@ -69,6 +70,7 @@ if ($lead) {
     </div>
   </div>
 </header>
+</div>
 
 <main class="ty" data-section="thank-you">
   <div class="container ty-card">
