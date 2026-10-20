@@ -24,3 +24,8 @@ RedirectMatch 404 /config\.local\.example\.php$
 <IfModule mod_headers.c>
   Header set X-Robots-Tag "noindex, nofollow"
 </IfModule>
+
+# Same domain as WordPress: never let LiteSpeed's page cache store these PHP pages (forms, CRM).
+<IfModule LiteSpeed>
+  CacheLookup off
+</IfModule>

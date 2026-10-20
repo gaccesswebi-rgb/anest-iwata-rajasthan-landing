@@ -4,7 +4,7 @@ require_login();
 
 $rows = oci_conversions(db());
 $ready = array_filter($rows, fn($r) => (string)$r['gclid'] !== '');
-$scheme = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http';
+$scheme = is_https() ? 'https' : 'http';
 $feedUrl = $scheme . '://' . ($_SERVER['HTTP_HOST'] ?? 'yourdomain') . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/') . '/oci.php';
 $feedOn = strlen(OCI_FEED_PASSWORD) >= 16;
 

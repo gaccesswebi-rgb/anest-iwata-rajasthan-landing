@@ -1,10 +1,12 @@
 <?php
 require_once __DIR__ . '/../inc/app.php';
 
-session_set_cookie_params(['httponly' => true, 'samesite' => 'Strict', 'secure' => !empty($_SERVER['HTTPS'])]);
+// Cookie only for the CRM folder (not sent to the WordPress site on the same domain).
+session_set_cookie_params(['path' => rtrim(dirname($_SERVER['SCRIPT_NAME']), '/') . '/', 'httponly' => true, 'samesite' => 'Strict', 'secure' => is_https()]);
 session_name('aw_crm');
 session_start();
 header('X-Frame-Options: DENY');
+header('Cache-Control: no-store, private'); // never cache CRM pages (LiteSpeed Cache / Cloudflare)
 header('X-Robots-Tag: noindex, nofollow');
 
 if (empty($_SESSION['csrf'])) $_SESSION['csrf'] = bin2hex(random_bytes(16));

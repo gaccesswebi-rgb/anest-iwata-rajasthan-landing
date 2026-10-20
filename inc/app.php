@@ -166,3 +166,17 @@ function form_requirements(): array
     }
     return $out;
 }
+
+/** Visitor IP. Behind Cloudflare REMOTE_ADDR is a Cloudflare edge, so prefer CF-Connecting-IP when it holds a valid IP. */
+function client_ip(): string
+{
+    $cf = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? '';
+    return filter_var($cf, FILTER_VALIDATE_IP) ? $cf : (string)($_SERVER['REMOTE_ADDR'] ?? '');
+}
+
+/** True when the visitor uses HTTPS, also behind a proxy/CDN that terminates SSL (Cloudflare). */
+function is_https(): bool
+{
+    return (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+        || strtolower((string)($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '')) === 'https';
+}

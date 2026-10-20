@@ -65,6 +65,42 @@ Resulting URLs (example):
 
 ---
 
+## 3A. Same domain as the WordPress site (ahujagroup.in) – recommended setup
+
+The landing pages and CRM live in their **own folder inside the WordPress root**. WordPress, its theme, plugins,
+`.htaccess` and MySQL database are **not touched**.
+
+1. In cPanel File Manager open the WordPress root (`public_html`, where `wp-config.php` is) and create the folder **`lp`**.
+2. Upload and extract this zip **into `public_html/lp/`** (the files, not the `anest-iwata-quickair-site` wrapper folder).
+3. Result:
+   - `https://ahujagroup.in/lp/` – Anest Iwata landing page
+   - `https://ahujagroup.in/lp/quickair/` – QuickAir landing page
+   - `https://ahujagroup.in/lp/crm/` – CRM
+
+Why WordPress is not affected: WordPress' rewrite rules only handle URLs that are **not** real files or folders
+(`RewriteCond %{REQUEST_FILENAME} !-f / !-d`). `/lp/` is a real folder, so the server serves it directly and every other URL
+still goes to WordPress. The CRM uses its own SQLite file in `lp/data/`, never the WordPress MySQL database.
+
+Rules for this setup:
+- Use the folder name **`lp`** (checked: it is free). Do **not** use `/quickair/` at the domain root – WordPress already uses it
+  (it redirects to `/quickair-aluminium-air-pipeline/`); a real folder with that name would hide that WordPress page.
+- Never put the files inside `wp-content`, `wp-admin` or `wp-includes`.
+- **LiteSpeed Cache** (WordPress plugin): nothing to change. `lp/.htaccess` already turns LiteSpeed's page cache off for this folder,
+  and CRM pages send `Cache-Control: no-store`.
+- **Cloudflare** (the domain is behind Cloudflare):
+  - Caching → Cache Rules → add a rule: *URI Path starts with `/lp/crm/`* → **Bypass cache**. Needed only if any
+    "Cache Everything" / Edge-TTL rule exists, but safe to add anyway.
+  - Security → WAF → add a skip/allow rule for *URI Path equals `/lp/crm/oci.php`* if you use the Google Ads automatic upload,
+    so Google's fetcher is not challenged.
+  - If a form or tracking misbehaves, disable **Rocket Loader** for `/lp/*` (Configuration Rules).
+  - Visitor IPs: the code reads Cloudflare's `CF-Connecting-IP`, so the spam limits work per real visitor.
+- **WordPress security plugins** (Wordfence etc.) may also run on these PHP files; if a form submit is blocked, whitelist `/lp/submit.php` and `/lp/cta.php`.
+- **Backups**: a full-site backup plugin may or may not include `/lp/`. Back up `lp/data/<db>.sqlite` and `lp/config.local.php` separately.
+- `robots.txt` inside `/lp/` is ignored by search engines (only the domain-root file counts) – that is fine, the pages already send `noindex`.
+- The Anest Iwata form sends visitors to `https://ahujagroup.in/thank-you/` – the WordPress thank-you page on the same domain.
+
+---
+
 ## 4. Configure (one time)
 
 ### 4.1 Create the secrets file

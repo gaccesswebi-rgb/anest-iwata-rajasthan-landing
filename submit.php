@@ -64,7 +64,7 @@ if ($site === 'quickair' && ($company === '' || $email === '')) back_with_error(
 $track = [];
 foreach (TRACK_FIELDS as $k) $track[$k] = field($k, $k === 'landing_url' || $k === 'referrer' ? 1000 : 255);
 
-$ip = $_SERVER['REMOTE_ADDR'] ?? '';
+$ip = client_ip();
 $pdo = db();
 
 // Rate limit: max 5 enquiries per IP per 10 minutes.

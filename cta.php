@@ -13,7 +13,7 @@ if (!isset(CTA_TYPES[$type])) exit;
 $track = [];
 foreach (TRACK_FIELDS as $k) $track[$k] = $val($k, $k === 'landing_url' || $k === 'referrer' ? 1000 : 255);
 
-$ip = $_SERVER['REMOTE_ADDR'] ?? '';
+$ip = client_ip();
 $pdo = db();
 
 // Ignore floods: max 60 events per IP per 10 minutes.
