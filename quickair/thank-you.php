@@ -34,8 +34,10 @@ if ($lead) {
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=3">
+<!-- fonts load without blocking first paint -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@500;600&family=Roboto:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@500;600&family=Roboto:wght@400;500;700&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/style.css?v=5">
 </head>
 <body class="ty-page">
 <?php include __DIR__ . '/../inc/gtm-body.php'; ?>
@@ -100,6 +102,7 @@ if ($lead) {
       <a href="tel:+919001848552" data-track="phone" data-place="footer">+91 90018 48552</a>
       <p>© <span id="year">2026</span> · All rights reserved.</p>
       <p class="muted">QuickAir aluminium piping systems supplied and installed by Ahuja Group.</p>
+      <p class="muted footer-legal"><a href="https://ahujagroup.in/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://ahujagroup.in/terms-of-use/" target="_blank" rel="noopener">Terms of Use</a></p>
     </div>
     <a href="mailto:projects1@ahujagroup.in" data-track="email" data-place="footer">projects1@ahujagroup.in</a>
   </div>
