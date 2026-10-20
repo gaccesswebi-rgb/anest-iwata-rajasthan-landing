@@ -66,7 +66,7 @@ $err = isset($_GET['err']) ? mb_substr($_GET['err'], 0, 160) : '';
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="top">
   <div class="container header-inner">
-    <a href="#top" class="brand" aria-label="Ahuja Group home"><img src="assets/img/ahuja-logo.png" alt="Ahuja Group" width="501" height="280"></a>
+    <a href="#top" class="brand" aria-label="Ahuja Group home"><img src="assets/img/ahuja-logo.webp" alt="Ahuja Group" width="501" height="280"></a>
     <div class="header-actions">
       <a href="https://wa.me/919001848552?text=Hi%2C%20I%27m%20interested%20in%20aluminium%20compressed%20air%20piping" target="_blank" rel="noopener" class="wa-icon" aria-label="WhatsApp us" data-track="whatsapp" data-place="header"><svg class="ic"><use href="#i-wa"/></svg></a>
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><svg class="ic"><use href="#i-menu"/></svg></button>
@@ -129,24 +129,24 @@ $err = isset($_GET['err']) ? mb_substr($_GET['err'], 0, 160) : '';
     <div class="auto-row">
       <span class="auto-label">Automotive</span>
       <ul class="logo-grid logo-grid-auto">
-        <li><img src="assets/img/logos/maruti-suzuki.png" style="--h:30px" alt="Maruti Suzuki" loading="lazy"></li>
+        <li><img src="assets/img/logos/maruti-suzuki.webp" style="--h:30px" alt="Maruti Suzuki" loading="lazy"></li>
         <li><img src="assets/img/logos/tvs.svg" style="--h:34px" alt="TVS" loading="lazy"></li>
-        <li><img src="assets/img/logos/ve-commercial.png" style="--h:36px" alt="VE Commercial Vehicles" loading="lazy"></li>
+        <li><img src="assets/img/logos/ve-commercial.webp" style="--h:36px" alt="VE Commercial Vehicles" loading="lazy"></li>
         <li class="break" aria-hidden="true"></li>
-        <li><img src="assets/img/logos/opmobility.png" style="--h:46px" alt="OPmobility" loading="lazy"></li>
-        <li><img src="assets/img/logos/eka.png" style="--h:44px" alt="EKA Mobility" loading="lazy"></li>
+        <li><img src="assets/img/logos/opmobility.webp" style="--h:46px" alt="OPmobility" loading="lazy"></li>
+        <li><img src="assets/img/logos/eka.webp" style="--h:44px" alt="EKA Mobility" loading="lazy"></li>
       </ul>
     </div>
     <ul class="logo-grid logo-grid-main">
-      <li><img src="assets/img/logos/bvg.png" style="--h:60px" alt="BVG India" loading="lazy"></li>
-      <li><img src="assets/img/logos/dcm-nouvelle.png" style="--h:44px" alt="DCM Nouvelle" loading="lazy"></li>
-      <li><img src="assets/img/logos/epack-durable.png" style="--h:52px" alt="Epack Durable" loading="lazy"></li>
-      <li><img src="assets/img/logos/rajasthan-patrika.png" style="--h:34px" alt="Rajasthan Patrika" loading="lazy"></li>
+      <li><img src="assets/img/logos/bvg.webp" style="--h:60px" alt="BVG India" loading="lazy"></li>
+      <li><img src="assets/img/logos/dcm-nouvelle.webp" style="--h:44px" alt="DCM Nouvelle" loading="lazy"></li>
+      <li><img src="assets/img/logos/epack-durable.webp" style="--h:52px" alt="Epack Durable" loading="lazy"></li>
+      <li><img src="assets/img/logos/rajasthan-patrika.webp" style="--h:34px" alt="Rajasthan Patrika" loading="lazy"></li>
       <li class="break" aria-hidden="true"></li>
-      <li><img src="assets/img/logos/genus.png" style="--h:50px" alt="Genus" loading="lazy"></li>
-      <li><img src="assets/img/logos/uttam.png" style="--h:40px" alt="Uttam" loading="lazy"></li>
-      <li><img src="assets/img/logos/paras.png" style="--h:40px" alt="Paras" loading="lazy"></li>
-      <li><img src="assets/img/logos/oswal-cables.png" style="--h:58px" alt="Oswal Cables" loading="lazy"></li>
+      <li><img src="assets/img/logos/genus.webp" style="--h:50px" alt="Genus" loading="lazy"></li>
+      <li><img src="assets/img/logos/uttam.webp" style="--h:40px" alt="Uttam" loading="lazy"></li>
+      <li><img src="assets/img/logos/paras.webp" style="--h:40px" alt="Paras" loading="lazy"></li>
+      <li><img src="assets/img/logos/oswal-cables.webp" style="--h:58px" alt="Oswal Cables" loading="lazy"></li>
     </ul>
   </div>
 </section>
@@ -306,23 +306,23 @@ $err = isset($_GET['err']) ? mb_substr($_GET['err'], 0, 160) : '';
       <div class="cert-group">
         <h3>Certifications</h3>
         <ul class="cert-grid">
-          <li><img src="assets/img/certs/tuv.png" alt="TÜV Rheinland" loading="lazy"></li>
-          <li><img src="assets/img/certs/ce.png" alt="CE" loading="lazy"></li>
-          <li><img src="assets/img/certs/ul.png" alt="UL" loading="lazy"></li>
-          <li><img src="assets/img/certs/iso-8573.png" alt="ISO 8573-1:2010" loading="lazy"></li>
-          <li><img src="assets/img/certs/iso-9001.png" alt="ISO 9001:2015" loading="lazy"></li>
-          <li><img src="assets/img/certs/rohs.png" alt="RoHS" loading="lazy"></li>
+          <li><img src="assets/img/certs/tuv.webp" alt="TÜV Rheinland" loading="lazy"></li>
+          <li><img src="assets/img/certs/ce.webp" alt="CE" loading="lazy"></li>
+          <li><img src="assets/img/certs/ul.webp" alt="UL" loading="lazy"></li>
+          <li><img src="assets/img/certs/iso-8573.webp" alt="ISO 8573-1:2010" loading="lazy"></li>
+          <li><img src="assets/img/certs/iso-9001.webp" alt="ISO 9001:2015" loading="lazy"></li>
+          <li><img src="assets/img/certs/rohs.webp" alt="RoHS" loading="lazy"></li>
         </ul>
       </div>
       <div class="cert-group">
         <h3>Standards</h3>
         <ul class="cert-grid">
-          <li><img src="assets/img/certs/asme-b31-3.png" alt="ASME B31.3" loading="lazy"></li>
-          <li><img src="assets/img/certs/astm-b85.png" alt="ASTM B85" loading="lazy"></li>
-          <li><img src="assets/img/certs/en-837-1.png" alt="EN 837-1" loading="lazy"></li>
-          <li><img src="assets/img/certs/ped.png" alt="PED certified 2014/68/EU" loading="lazy"></li>
-          <li><img src="assets/img/certs/iso-8030.png" alt="ISO 8030" loading="lazy"></li>
-          <li><img src="assets/img/certs/is-1608.png" alt="IS 1608" loading="lazy"></li>
+          <li><img src="assets/img/certs/asme-b31-3.webp" alt="ASME B31.3" loading="lazy"></li>
+          <li><img src="assets/img/certs/astm-b85.webp" alt="ASTM B85" loading="lazy"></li>
+          <li><img src="assets/img/certs/en-837-1.webp" alt="EN 837-1" loading="lazy"></li>
+          <li><img src="assets/img/certs/ped.webp" alt="PED certified 2014/68/EU" loading="lazy"></li>
+          <li><img src="assets/img/certs/iso-8030.webp" alt="ISO 8030" loading="lazy"></li>
+          <li><img src="assets/img/certs/is-1608.webp" alt="IS 1608" loading="lazy"></li>
         </ul>
       </div>
       <div class="made-in-india"><img src="assets/img/certs/made-in-india.svg" alt="Made in India" loading="lazy" width="120" height="120"><p><b>Manufactured in India.</b> Exported to the USA, Australia, Germany and Serbia.</p></div>
@@ -363,19 +363,19 @@ $err = isset($_GET['err']) ? mb_substr($_GET['err'], 0, 160) : '';
     <div class="ind-layout">
       <img class="ind-map" src="assets/img/india-map.webp" alt="Map of Indian states where QuickAir systems are installed" loading="lazy" width="800" height="906">
       <div class="ind-grid">
-        <div class="ind ind-wide"><h3>Automotive</h3><div class="ind-logos"><img src="assets/img/logos/maruti-suzuki.png" style="--h:30px" alt="Maruti Suzuki" loading="lazy"><img src="assets/img/logos/tvs.svg" style="--h:34px" alt="TVS" loading="lazy"><img src="assets/img/logos/ve-commercial.png" style="--h:36px" alt="VE Commercial Vehicles" loading="lazy"><img src="assets/img/logos/opmobility.png" style="--h:46px" alt="OPmobility" loading="lazy"><img src="assets/img/logos/eka.png" style="--h:44px" alt="EKA Mobility" loading="lazy"></div></div>
-        <div class="ind"><h3>Power</h3><div class="ind-logos"><img src="assets/img/logos/genus.png" style="--h:50px" alt="Genus" loading="lazy"><img src="assets/img/logos/uttam.png" style="--h:40px" alt="Uttam" loading="lazy"></div></div>
-        <div class="ind"><h3>Solar</h3><div class="ind-logos"><img src="assets/img/logos/bvg.png" style="--h:60px" alt="BVG India" loading="lazy"></div></div>
-        <div class="ind"><h3>Textiles</h3><div class="ind-logos"><img src="assets/img/logos/dcm-nouvelle.png" style="--h:44px" alt="DCM Nouvelle" loading="lazy"></div></div>
-        <div class="ind"><h3>Stone</h3><div class="ind-logos"><img src="assets/img/logos/shree-ram.png" style="--h:56px" alt="Shree Ram Mega Structure" loading="lazy"></div></div>
-        <div class="ind"><h3>Printing</h3><div class="ind-logos"><img src="assets/img/logos/rajasthan-patrika.png" style="--h:34px" alt="Rajasthan Patrika" loading="lazy"></div></div>
-        <div class="ind"><h3>Plastic</h3><div class="ind-logos"><img src="assets/img/logos/paras.png" style="--h:40px" alt="Paras" loading="lazy"><img src="assets/img/logos/safari.png" style="--h:40px" alt="Safari" loading="lazy"></div></div>
-        <div class="ind"><h3>Ceramics</h3><div class="ind-logos"><img src="assets/img/logos/clay-craft.png" style="--h:70px" alt="Clay Craft" loading="lazy"></div></div>
-        <div class="ind"><h3>Food</h3><div class="ind-logos"><img src="assets/img/logos/radhey-agro.png" style="--h:70px" alt="Radhey Agro (Kanha Group)" loading="lazy"></div></div>
-        <div class="ind"><h3>Engineering</h3><div class="ind-logos"><img src="assets/img/logos/epack-prefab.png" style="--h:56px" alt="Epack Prefab" loading="lazy"></div></div>
-        <div class="ind"><h3>Cables</h3><div class="ind-logos"><img src="assets/img/logos/dynamic-cables.png" style="--h:44px" alt="Dynamic Cables" loading="lazy"><img src="assets/img/logos/oswal-cables.png" style="--h:58px" alt="Oswal Cables" loading="lazy"></div></div>
-        <div class="ind ind-span2"><h3>Consumer durables</h3><div class="ind-logos"><img src="assets/img/logos/epack-durable.png" style="--h:52px" alt="Epack Durable" loading="lazy"></div></div>
-        <div class="ind ind-wide"><h3>Furniture</h3><div class="ind-logos"><img src="assets/img/logos/laxmi-ideal.png" style="--h:60px" alt="Laxmi Ideal Interiors" loading="lazy"><img src="assets/img/logos/modi-furniture.png" style="--h:50px" alt="Modi Furniture" loading="lazy"><img src="assets/img/logos/aked.png" style="--h:60px" alt="AKED" loading="lazy"><img src="assets/img/logos/haus-luxuriant.png" style="--h:44px" alt="Haus Luxuriant" loading="lazy"></div></div>
+        <div class="ind ind-wide"><h3>Automotive</h3><div class="ind-logos"><img src="assets/img/logos/maruti-suzuki.webp" style="--h:30px" alt="Maruti Suzuki" loading="lazy"><img src="assets/img/logos/tvs.svg" style="--h:34px" alt="TVS" loading="lazy"><img src="assets/img/logos/ve-commercial.webp" style="--h:36px" alt="VE Commercial Vehicles" loading="lazy"><img src="assets/img/logos/opmobility.webp" style="--h:46px" alt="OPmobility" loading="lazy"><img src="assets/img/logos/eka.webp" style="--h:44px" alt="EKA Mobility" loading="lazy"></div></div>
+        <div class="ind"><h3>Power</h3><div class="ind-logos"><img src="assets/img/logos/genus.webp" style="--h:50px" alt="Genus" loading="lazy"><img src="assets/img/logos/uttam.webp" style="--h:40px" alt="Uttam" loading="lazy"></div></div>
+        <div class="ind"><h3>Solar</h3><div class="ind-logos"><img src="assets/img/logos/bvg.webp" style="--h:60px" alt="BVG India" loading="lazy"></div></div>
+        <div class="ind"><h3>Textiles</h3><div class="ind-logos"><img src="assets/img/logos/dcm-nouvelle.webp" style="--h:44px" alt="DCM Nouvelle" loading="lazy"></div></div>
+        <div class="ind"><h3>Stone</h3><div class="ind-logos"><img src="assets/img/logos/shree-ram.webp" style="--h:56px" alt="Shree Ram Mega Structure" loading="lazy"></div></div>
+        <div class="ind"><h3>Printing</h3><div class="ind-logos"><img src="assets/img/logos/rajasthan-patrika.webp" style="--h:34px" alt="Rajasthan Patrika" loading="lazy"></div></div>
+        <div class="ind"><h3>Plastic</h3><div class="ind-logos"><img src="assets/img/logos/paras.webp" style="--h:40px" alt="Paras" loading="lazy"><img src="assets/img/logos/safari.webp" style="--h:40px" alt="Safari" loading="lazy"></div></div>
+        <div class="ind"><h3>Ceramics</h3><div class="ind-logos"><img src="assets/img/logos/clay-craft.webp" style="--h:70px" alt="Clay Craft" loading="lazy"></div></div>
+        <div class="ind"><h3>Food</h3><div class="ind-logos"><img src="assets/img/logos/radhey-agro.webp" style="--h:70px" alt="Radhey Agro (Kanha Group)" loading="lazy"></div></div>
+        <div class="ind"><h3>Engineering</h3><div class="ind-logos"><img src="assets/img/logos/epack-prefab.webp" style="--h:56px" alt="Epack Prefab" loading="lazy"></div></div>
+        <div class="ind"><h3>Cables</h3><div class="ind-logos"><img src="assets/img/logos/dynamic-cables.webp" style="--h:44px" alt="Dynamic Cables" loading="lazy"><img src="assets/img/logos/oswal-cables.webp" style="--h:58px" alt="Oswal Cables" loading="lazy"></div></div>
+        <div class="ind ind-span2"><h3>Consumer durables</h3><div class="ind-logos"><img src="assets/img/logos/epack-durable.webp" style="--h:52px" alt="Epack Durable" loading="lazy"></div></div>
+        <div class="ind ind-wide"><h3>Furniture</h3><div class="ind-logos"><img src="assets/img/logos/laxmi-ideal.webp" style="--h:60px" alt="Laxmi Ideal Interiors" loading="lazy"><img src="assets/img/logos/modi-furniture.webp" style="--h:50px" alt="Modi Furniture" loading="lazy"><img src="assets/img/logos/aked.webp" style="--h:60px" alt="AKED" loading="lazy"><img src="assets/img/logos/haus-luxuriant.webp" style="--h:44px" alt="Haus Luxuriant" loading="lazy"></div></div>
       </div>
     </div>
   </div>

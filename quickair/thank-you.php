@@ -61,7 +61,7 @@ if ($lead) {
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="./" class="brand" aria-label="Ahuja Group home"><img src="assets/img/ahuja-logo.png" alt="Ahuja Group" width="501" height="280"></a>
+    <a href="./" class="brand" aria-label="Ahuja Group home"><img src="assets/img/ahuja-logo.webp" alt="Ahuja Group" width="501" height="280"></a>
     <div class="header-actions">
       <a href="https://wa.me/919001848552?text=Hi%2C%20I%20just%20submitted%20a%20quotation%20request%20for%20aluminium%20compressed%20air%20piping" target="_blank" rel="noopener" class="wa-icon" aria-label="WhatsApp us" data-track="whatsapp" data-place="thankyou-header"><svg class="ic"><use href="#i-wa"/></svg></a>
     </div>
