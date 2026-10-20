@@ -415,3 +415,9 @@ section { padding: 72px 0; }
   .ty-next { padding: 18px 16px; }
   .ty-actions .btn { flex: 1 1 100%; white-space: normal; }
 }
+
+/* Pipe, pipeline & fittings section (keyword content near the end of the page) */
+.pipe-range-intro { max-width: 820px; margin: -16px 0 32px; font-size: 17px; }
+.pipe-range .benefit-grid { grid-template-columns: repeat(2, 1fr); }
+.pipe-range-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+@media (max-width: 760px) { .pipe-range .benefit-grid { grid-template-columns: 1fr; } }

@@ -23,7 +23,7 @@ $err = isset($_GET['err']) ? mb_substr($_GET['err'], 0, 160) : '';
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@500;600&family=Roboto:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@500;600&family=Roboto:wght@400;500;700&display=swap"></noscript>
 <link rel="preload" as="image" href="assets/img/hero.webp">
-<link rel="stylesheet" href="assets/css/style.css?v=5">
+<link rel="stylesheet" href="assets/css/style.css?v=6">
 </head>
 <body>
 <?php include __DIR__ . '/../inc/gtm-body.php'; ?>
@@ -399,6 +399,25 @@ $err = isset($_GET['err']) ? mb_substr($_GET['err'], 0, 160) : '';
   </div>
 </section>
 
+<!-- ============ PIPE, PIPELINE & FITTINGS (search keywords: fittings / pipeline / air line / suppliers) ============ -->
+<section class="benefits dark pipe-range" id="pipe-fittings" data-section="pipe-fittings">
+  <div class="container">
+    <p class="eyebrow">Aluminium air pipe &amp; fittings</p>
+    <h2>Aluminium compressed air pipe, pipeline &amp; fittings</h2>
+    <p class="pipe-range-intro">Ahuja Group is an authorised supplier and installer of QuickAir modular aluminium (aluminum) compressed air piping. One team designs, supplies, installs, tests and commissions your aluminium air pipeline across India.</p>
+    <div class="benefit-grid">
+      <article class="benefit"><svg class="ic"><use href="#i-link"/></svg><h3>Aluminium air pipe fittings</h3><p>Push-fit fittings 20–63 mm OD (tool-free, zero thread), integrated elbows and tees 20–90 mm, crimped fittings 113–290 mm, ball and butterfly valves, drops &amp; manifolds, brackets and accessories. Transition fittings join existing steel, copper or PPR lines.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-layers"/></svg><h3>Aluminium air pipeline &amp; air line sizes</h3><p>20 mm (¾") to 290 mm (12"). 16 bar working pressure with a 40 bar high-pressure option, −20 °C to 90 °C, vacuum down to 1 mbar (absolute). For compressed air (dry, wet, lubricated), vacuum, inert gases and instrument air.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-shield"/></svg><h3>Blue powder-coated aluminium pipe</h3><p>6063-T5 aluminium alloy with blue powder coating. Smooth interior for minimal pressure drop and clean air; resists corrosion, UV and outdoor installation. 25+ years expected life and a 10-year warranty.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-award"/></svg><h3>Authorised supplier &amp; installer</h3><p>Designed, supplied and installed across India, with projects in 11+ states, a team of 33+ engineers and ISO 9001:2015 certification. A 6-step turnkey process from site survey to commissioning and handover.</p></article>
+    </div>
+    <div class="pipe-range-cta">
+      <a href="#quote" class="btn btn-red btn-lg" data-cta="Speak to an Engineer">Speak to an Engineer</a>
+      <a href="tel:+919001848552" class="btn btn-outline-light btn-lg" data-track="phone"><svg class="ic"><use href="#i-phone"/></svg> Call now</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section class="faq" id="faq" data-section="faq">
   <div class="container narrow">
@@ -410,6 +429,17 @@ $err = isset($_GET['err']) ? mb_substr($_GET['err'], 0, 160) : '';
       <details><summary>Who does the installation?</summary><p>Our own certified installation team. The same team that produces the design carries out the erection, pressure testing and commissioning, so responsibility does not split between a supplier and a contractor.</p></details>
       <details><summary>What does the warranty cover?</summary><p>Ten years against manufacturing defects on pipe and fittings, valid when the system is installed by authorised technicians. Installation workmanship is covered separately under our own warranty.</p></details>
       <details><summary>Can work be done while the plant is running?</summary><p>In most cases yes. The system requires no welding or hot work, so new lines and drops can usually be installed alongside production, with a short tie-in shutdown only at changeover.</p></details>
+      <details><summary>Which aluminium air pipe fittings do you supply?</summary><p>The QuickAir range covers push-fit fittings (20–63 mm OD, tool-free), integrated fittings with a merged elbow and tee design (20–90 mm OD), crimped fittings (113–290 mm OD), ball and butterfly valves for isolation and zoning, drops and manifolds for point-of-use distribution, and brackets, supports, hardware and installation tools.</p></details>
+      <details><summary>Push-fit, integrated or crimped fittings: which one is right?</summary><p>It mainly depends on pipe size. Push-fit fittings cover 20–63 mm OD and connect tool-free with zero threads. Integrated fittings (20–90 mm OD) merge the elbow and tee, cutting parts and assembly time by 40%. Crimped fittings are used on large pipes from 113 to 290 mm OD. Our engineer selects the right type during system design.</p></details>
+      <details><summary>Can aluminium compressed air pipe fittings connect to my machines and pneumatic equipment?</summary><p>Yes. The system connects to female thread, male thread and flange joints, and drops and manifolds deliver air at each point of use. Transition fittings also tie into existing steel, copper or PPR lines.</p></details>
+      <details><summary>Can the aluminium air line be extended or changed later?</summary><p>Yes. The system is modular and the fittings are reusable, so you can expand, modify or relocate lines as the plant evolves using the same set of materials, from 20 mm to 290 mm (¾" – 12").</p></details>
+      <details><summary>Are you a manufacturer or a supplier of aluminium air pipes?</summary><p>Ahuja Group is an authorised supplier and installer of QuickAir aluminium compressed air piping. QuickAir is manufactured in India and exported to the USA, Australia, Germany and Serbia. We design, supply, install, test and commission the system with one team, under one warranty.</p></details>
+      <details><summary>Do you supply and install aluminium air pipelines across India?</summary><p>Yes. QuickAir systems are designed, supplied and installed across India, with projects in 11+ states. Share your plant details in the form or call +91 90018 48552, and our engineer will respond within one working day.</p></details>
+      <details><summary>What is an aluminium air pipeline, and why is it better than GI or MS pipe?</summary><p>It is a modular network of powder-coated aluminium pipes and fittings that carries compressed air from the compressor to every machine. Unlike GI or MS pipe it does not rust, the smooth full bore gives minimal pressure drop and contaminant-free air, zero-thread joints are leak-proof, and installation is up to 70% faster with no welding.</p></details>
+      <details><summary>What sizes and pressure ratings are available?</summary><p>Pipes and fittings from 20 mm (¾") to 290 mm (12"), rated for 16 bar working pressure with a 40 bar high-pressure option, vacuum down to 1 mbar (absolute), and temperatures from −20 °C to 90 °C.</p></details>
+      <details><summary>What is the blue aluminium compressed air pipe made of?</summary><p>The pipes are made from 6063-T5 aluminium alloy with a blue powder coating. The powder-coated finish gives a smooth interior for minimal pressure drop and clean air, and resists corrosion, UV and outdoor installation. The material is non-flammable (UL94HB rated) and 100% recyclable.</p></details>
+      <details><summary>How fast is installation compared with GI, steel or copper pipe?</summary><p>Up to 70% faster than steel, copper or welded systems. The pipes are light and easy to cut, and there is no welding, gluing or threading, so most installation work is done while the plant keeps running.</p></details>
+      <details><summary>What is the expected life of an aluminium compressed air pipeline?</summary><p>The expected pipeline lifespan is 25+ years, backed by a 10-year warranty against manufacturing defects on pipe and fittings. The system resists corrosion, vibration, heat and harsh environments.</p></details>
     </div>
   </div>
 </section>
@@ -451,6 +481,6 @@ $err = isset($_GET['err']) ? mb_substr($_GET['err'], 0, 160) : '';
   <a href="#quote" class="sb-cta" data-cta="Speak to an Engineer">Speak to an Engineer</a>
 </nav>
 
-<script src="assets/js/main.js?v=3" defer></script>
+<script src="assets/js/main.js?v=4" defer></script>
 </body>
 </html>

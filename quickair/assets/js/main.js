@@ -79,7 +79,7 @@
     topbar: 'Top Bar', header: 'Header', hero: 'Hero', 'quote-form': 'Quote Section', 'quote-section': 'Quote Section',
     'cta-compare': 'Compare CTA', 'cta-projects': 'Projects CTA', contact: 'Contact Section', footer: 'Footer',
     'sticky-bar': 'Mobile Sticky Bar', thankyou: 'Thank-you Page', 'thank-you': 'Thank-you Page', faq: 'FAQ',
-    'logo-strip': 'Clients'
+    'logo-strip': 'Clients', 'pipe-fittings': 'Pipe & Fittings Section'
   };
   function sectionName(place) {
     return SECTION_NAMES[place] || String(place).replace(/-/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
