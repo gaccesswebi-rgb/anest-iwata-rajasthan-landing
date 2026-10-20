@@ -21,7 +21,7 @@ $err = isset($_GET['err']) ? mb_substr($_GET['err'], 0, 160) : '';
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/hero.webp">
-<link rel="stylesheet" href="assets/css/style.css?v=2">
+<link rel="stylesheet" href="assets/css/style.css?v=3">
 </head>
 <body>
 <?php include __DIR__ . '/../inc/gtm-body.php'; ?>
@@ -72,10 +72,10 @@ $err = isset($_GET['err']) ? mb_substr($_GET['err'], 0, 160) : '';
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><svg class="ic"><use href="#i-menu"/></svg></button>
     </div>
     <nav class="main-nav" id="main-nav" aria-label="Main">
-      <a href="#benefits">Benefits</a>
-      <a href="#compare">Compare</a>
       <a href="#products">Products</a>
       <a href="#specs">Specification</a>
+      <a href="#compare">Compare</a>
+      <a href="#benefits">Benefits</a>
       <a href="#projects">Past Projects</a>
       <a href="#clients">Clients</a>
       <a href="#process">Process</a>
@@ -204,70 +204,6 @@ $err = isset($_GET['err']) ? mb_substr($_GET['err'], 0, 160) : '';
   </div>
 </section>
 
-<!-- ============ BENEFITS / TECHNICAL ADVANTAGES ============ -->
-<section class="benefits dark" id="benefits" data-section="benefits">
-  <div class="container">
-    <p class="eyebrow">Benefits &amp; technical advantages</p>
-    <h2>Why plants switch to QuickAir</h2>
-    <div class="benefit-grid">
-      <article class="benefit"><svg class="ic"><use href="#i-zap"/></svg><h3>Ultra-fast installation</h3><p>Up to 70% faster than steel, copper or welded systems. Labour is around 20% of total installation cost.</p></article>
-      <article class="benefit"><svg class="ic"><use href="#i-shield"/></svg><h3>Zero corrosion, clean air</h3><p>Smooth powder-coated interior gives minimal pressure drop, laminar flow and contaminant-free delivery. No rust like GI/MS pipes.</p></article>
-      <article class="benefit"><svg class="ic"><use href="#i-lock"/></svg><h3>Leak-proof performance</h3><p>Full-bore design, reusable fittings and push-to-connect technology, rated to 16 bar and −20 °C to 90 °C.</p></article>
-      <article class="benefit"><svg class="ic"><use href="#i-wind"/></svg><h3>High flow performance</h3><p>Smooth, full bore ensures maximum air flow through the pipes and lower compressor load.</p></article>
-      <article class="benefit"><svg class="ic"><use href="#i-down"/></svg><h3>Energy &amp; cost savings</h3><p>Optimised layout, no leak points and minimised pressure drop cut power, maintenance and installation costs.</p></article>
-      <article class="benefit"><svg class="ic"><use href="#i-layers"/></svg><h3>Modular flexibility</h3><p>Expand, modify or relocate as the plant evolves using the same set of materials, 20 mm to 290 mm (¾" – 12").</p></article>
-      <article class="benefit"><svg class="ic"><use href="#i-award"/></svg><h3>International standards</h3><p>Complies with ISO 8573-1:2010, ASME B31.1 / B31.3 and PED 2014/68/EU for piping.</p></article>
-      <article class="benefit"><svg class="ic"><use href="#i-link"/></svg><h3>Perfect compatibility</h3><p>Connects to female thread, male thread and flange joints. Transition fittings tie into existing steel, copper or PPR lines.</p></article>
-      <article class="benefit"><svg class="ic"><use href="#i-shield"/></svg><h3>Strong &amp; long life</h3><p>Resists corrosion, vibration, heat and harsh environments, protecting air quality up to the point of use.</p></article>
-      <article class="benefit"><svg class="ic"><use href="#i-ban"/></svg><h3>No hot work</h3><p>No welding, gluing or threading. Light, easy-to-cut pipes; most work is done while the plant keeps running.</p></article>
-      <article class="benefit"><svg class="ic"><use href="#i-recycle"/></svg><h3>100% recyclable</h3><p>Aluminium pipes and fittings are fully recyclable at the end of their life.</p></article>
-      <article class="benefit"><svg class="ic"><use href="#i-users"/></svg><h3>One team, start to finish</h3><p>Designed, supplied, installed, tested and commissioned by the same team, under one warranty.</p></article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ COMPARISON ============ -->
-<section class="compare" id="compare" data-section="compare">
-  <div class="container">
-    <p class="eyebrow">Competitive edge</p>
-    <h2>QuickAir vs other systems</h2>
-    <div class="cmp-table" role="table" aria-label="QuickAir compared with other piping systems">
-      <div class="cmp-head" role="row"><span role="columnheader">QuickAir</span><span role="columnheader">Others</span></div>
-      <div class="cmp-row" role="row">
-        <div class="cmp-q" role="cell"><img src="assets/img/compare/quickair-1.png" alt="" loading="lazy"><p><b>Push-in fittings (20–63 mm)</b> Zero thread, zero leakage.</p></div>
-        <div class="cmp-o" role="cell"><svg class="ic"><use href="#i-xc"/></svg><p>Not available.</p></div>
-      </div>
-      <div class="cmp-row" role="row">
-        <div class="cmp-q" role="cell"><img src="assets/img/compare/quickair-2.png" alt="" loading="lazy"><p><b>Integrated elbow &amp; tee design</b> Merged fittings cut parts and assembly time by 40%.</p></div>
-        <div class="cmp-o" role="cell"><img src="assets/img/compare/others-2.png" alt="" loading="lazy"><p>Requires multiple couplers.</p></div>
-      </div>
-      <div class="cmp-row" role="row">
-        <div class="cmp-q" role="cell"><img src="assets/img/compare/quickair-3.png" alt="" loading="lazy"><p><b>Zero thread, zero leakage</b> Patented wall brackets and fittings eliminate leaks.</p></div>
-        <div class="cmp-o" role="cell"><img src="assets/img/compare/others-3.png" alt="" loading="lazy"><p>Threaded, prone to leakage.</p></div>
-      </div>
-      <div class="cmp-row" role="row">
-        <div class="cmp-q" role="cell"><img src="assets/img/compare/quickair-4.png" alt="" loading="lazy"><p><b>Automated valves</b> Ball and butterfly valves with pneumatic or electric actuators, PLC control and SCADA monitoring.</p></div>
-        <div class="cmp-o" role="cell"><svg class="ic"><use href="#i-xc"/></svg><p>Auto systems not available. Manual or basic valves risk leaks and delays.</p></div>
-      </div>
-      <div class="cmp-row" role="row">
-        <div class="cmp-q" role="cell"><img src="assets/img/compare/quickair-5.png" alt="" loading="lazy"><p><b>Male-female coupler</b> Rubber support and insert nut snap together like puzzle pieces for a leak-proof seal.</p></div>
-        <div class="cmp-o" role="cell"><img src="assets/img/compare/others-5.png" alt="" loading="lazy"><p>Couplers lack this design, harder to install and prone to leaks.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ EXPERT CTA ============ -->
-<section class="cta-band" data-section="cta-compare">
-  <div class="container cta-inner">
-    <h2>Comparing materials or brands for your compressed air pipeline? <span>Not sure which one is right?</span></h2>
-    <div class="cta-btns">
-      <a href="#quote" class="btn btn-red" data-cta="Speak to an Engineer">Speak to an Engineer</a>
-      <a href="tel:+919001848552" class="btn btn-outline-light" data-track="phone" data-place="cta-compare"><svg class="ic"><use href="#i-phone"/></svg> Call now</a>
-    </div>
-  </div>
-</section>
-
 <!-- ============ PRODUCTS ============ -->
 <section class="products" id="products" data-section="products">
   <div class="container">
@@ -326,6 +262,70 @@ $err = isset($_GET['err']) ? mb_substr($_GET['err'], 0, 160) : '';
         </ul>
       </div>
       <div class="made-in-india"><img src="assets/img/certs/made-in-india.svg" alt="Made in India" loading="lazy" width="120" height="120"><p><b>Manufactured in India.</b> Exported to the USA, Australia, Germany and Serbia.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARISON ============ -->
+<section class="compare" id="compare" data-section="compare">
+  <div class="container">
+    <p class="eyebrow">Competitive edge</p>
+    <h2>QuickAir vs other systems</h2>
+    <div class="cmp-table" role="table" aria-label="QuickAir compared with other piping systems">
+      <div class="cmp-head" role="row"><span role="columnheader">QuickAir</span><span role="columnheader">Others</span></div>
+      <div class="cmp-row" role="row">
+        <div class="cmp-q" role="cell"><img src="assets/img/compare/quickair-1.png" alt="" loading="lazy"><p><b>Push-in fittings (20–63 mm)</b> Zero thread, zero leakage.</p></div>
+        <div class="cmp-o" role="cell"><svg class="ic"><use href="#i-xc"/></svg><p>Not available.</p></div>
+      </div>
+      <div class="cmp-row" role="row">
+        <div class="cmp-q" role="cell"><img src="assets/img/compare/quickair-2.png" alt="" loading="lazy"><p><b>Integrated elbow &amp; tee design</b> Merged fittings cut parts and assembly time by 40%.</p></div>
+        <div class="cmp-o" role="cell"><img src="assets/img/compare/others-2.png" alt="" loading="lazy"><p>Requires multiple couplers.</p></div>
+      </div>
+      <div class="cmp-row" role="row">
+        <div class="cmp-q" role="cell"><img src="assets/img/compare/quickair-3.png" alt="" loading="lazy"><p><b>Zero thread, zero leakage</b> Patented wall brackets and fittings eliminate leaks.</p></div>
+        <div class="cmp-o" role="cell"><img src="assets/img/compare/others-3.png" alt="" loading="lazy"><p>Threaded, prone to leakage.</p></div>
+      </div>
+      <div class="cmp-row" role="row">
+        <div class="cmp-q" role="cell"><img src="assets/img/compare/quickair-4.png" alt="" loading="lazy"><p><b>Automated valves</b> Ball and butterfly valves with pneumatic or electric actuators, PLC control and SCADA monitoring.</p></div>
+        <div class="cmp-o" role="cell"><svg class="ic"><use href="#i-xc"/></svg><p>Auto systems not available. Manual or basic valves risk leaks and delays.</p></div>
+      </div>
+      <div class="cmp-row" role="row">
+        <div class="cmp-q" role="cell"><img src="assets/img/compare/quickair-5.png" alt="" loading="lazy"><p><b>Male-female coupler</b> Rubber support and insert nut snap together like puzzle pieces for a leak-proof seal.</p></div>
+        <div class="cmp-o" role="cell"><img src="assets/img/compare/others-5.png" alt="" loading="lazy"><p>Couplers lack this design, harder to install and prone to leaks.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERT CTA ============ -->
+<section class="cta-band" data-section="cta-compare">
+  <div class="container cta-inner">
+    <h2>Comparing materials or brands for your compressed air pipeline? <span>Not sure which one is right?</span></h2>
+    <div class="cta-btns">
+      <a href="#quote" class="btn btn-red" data-cta="Speak to an Engineer">Speak to an Engineer</a>
+      <a href="tel:+919001848552" class="btn btn-outline-light" data-track="phone" data-place="cta-compare"><svg class="ic"><use href="#i-phone"/></svg> Call now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS / TECHNICAL ADVANTAGES ============ -->
+<section class="benefits dark" id="benefits" data-section="benefits">
+  <div class="container">
+    <p class="eyebrow">Benefits &amp; technical advantages</p>
+    <h2>Why plants switch to QuickAir</h2>
+    <div class="benefit-grid">
+      <article class="benefit"><svg class="ic"><use href="#i-zap"/></svg><h3>Ultra-fast installation</h3><p>Up to 70% faster than steel, copper or welded systems. Labour is around 20% of total installation cost.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-shield"/></svg><h3>Zero corrosion, clean air</h3><p>Smooth powder-coated interior gives minimal pressure drop, laminar flow and contaminant-free delivery. No rust like GI/MS pipes.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-lock"/></svg><h3>Leak-proof performance</h3><p>Full-bore design, reusable fittings and push-to-connect technology, rated to 16 bar and −20 °C to 90 °C.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-wind"/></svg><h3>High flow performance</h3><p>Smooth, full bore ensures maximum air flow through the pipes and lower compressor load.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-down"/></svg><h3>Energy &amp; cost savings</h3><p>Optimised layout, no leak points and minimised pressure drop cut power, maintenance and installation costs.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-layers"/></svg><h3>Modular flexibility</h3><p>Expand, modify or relocate as the plant evolves using the same set of materials, 20 mm to 290 mm (¾" – 12").</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-award"/></svg><h3>International standards</h3><p>Complies with ISO 8573-1:2010, ASME B31.1 / B31.3 and PED 2014/68/EU for piping.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-link"/></svg><h3>Perfect compatibility</h3><p>Connects to female thread, male thread and flange joints. Transition fittings tie into existing steel, copper or PPR lines.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-shield"/></svg><h3>Strong &amp; long life</h3><p>Resists corrosion, vibration, heat and harsh environments, protecting air quality up to the point of use.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-ban"/></svg><h3>No hot work</h3><p>No welding, gluing or threading. Light, easy-to-cut pipes; most work is done while the plant keeps running.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-recycle"/></svg><h3>100% recyclable</h3><p>Aluminium pipes and fittings are fully recyclable at the end of their life.</p></article>
+      <article class="benefit"><svg class="ic"><use href="#i-users"/></svg><h3>One team, start to finish</h3><p>Designed, supplied, installed, tested and commissioned by the same team, under one warranty.</p></article>
     </div>
   </div>
 </section>
